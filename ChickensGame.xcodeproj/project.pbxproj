@@ -1,0 +1,588 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D6C23B5629D3312F00EEB16D /* ChickensGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C23B5529D3312F00EEB16D /* ChickensGameApp.swift */; };
+		D6C23B5829D3312F00EEB16D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C23B5729D3312F00EEB16D /* ContentView.swift */; };
+		D6C23B5A29D3313000EEB16D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6C23B5929D3313000EEB16D /* Assets.xcassets */; };
+		D6C23B5D29D3313000EEB16D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6C23B5C29D3313000EEB16D /* Preview Assets.xcassets */; };
+		D6C23B6729D3313100EEB16D /* ChickensGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C23B6629D3313100EEB16D /* ChickensGameTests.swift */; };
+		D6C23B7129D3313100EEB16D /* ChickensGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C23B7029D3313100EEB16D /* ChickensGameUITests.swift */; };
+		D6C23B7329D3313100EEB16D /* ChickensGameUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C23B7229D3313100EEB16D /* ChickensGameUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D6C23B6329D3313100EEB16D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D6C23B4A29D3312E00EEB16D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D6C23B5129D3312F00EEB16D;
+			remoteInfo = ChickensGame;
+		};
+		D6C23B6D29D3313100EEB16D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D6C23B4A29D3312E00EEB16D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D6C23B5129D3312F00EEB16D;
+			remoteInfo = ChickensGame;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D6C23B5229D3312F00EEB16D /* ChickensGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChickensGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6C23B5529D3312F00EEB16D /* ChickensGameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChickensGameApp.swift; sourceTree = "<group>"; };
+		D6C23B5729D3312F00EEB16D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D6C23B5929D3313000EEB16D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D6C23B5C29D3313000EEB16D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D6C23B6229D3313100EEB16D /* ChickensGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChickensGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6C23B6629D3313100EEB16D /* ChickensGameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChickensGameTests.swift; sourceTree = "<group>"; };
+		D6C23B6C29D3313100EEB16D /* ChickensGameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChickensGameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6C23B7029D3313100EEB16D /* ChickensGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChickensGameUITests.swift; sourceTree = "<group>"; };
+		D6C23B7229D3313100EEB16D /* ChickensGameUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChickensGameUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D6C23B4F29D3312F00EEB16D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D6C23B5F29D3313100EEB16D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D6C23B6929D3313100EEB16D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D6C23B4929D3312E00EEB16D = {
+			isa = PBXGroup;
+			children = (
+				D6C23B5429D3312F00EEB16D /* ChickensGame */,
+				D6C23B6529D3313100EEB16D /* ChickensGameTests */,
+				D6C23B6F29D3313100EEB16D /* ChickensGameUITests */,
+				D6C23B5329D3312F00EEB16D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D6C23B5329D3312F00EEB16D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D6C23B5229D3312F00EEB16D /* ChickensGame.app */,
+				D6C23B6229D3313100EEB16D /* ChickensGameTests.xctest */,
+				D6C23B6C29D3313100EEB16D /* ChickensGameUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D6C23B5429D3312F00EEB16D /* ChickensGame */ = {
+			isa = PBXGroup;
+			children = (
+				D6C23B5529D3312F00EEB16D /* ChickensGameApp.swift */,
+				D6C23B5729D3312F00EEB16D /* ContentView.swift */,
+				D6C23B5929D3313000EEB16D /* Assets.xcassets */,
+				D6C23B5B29D3313000EEB16D /* Preview Content */,
+			);
+			path = ChickensGame;
+			sourceTree = "<group>";
+		};
+		D6C23B5B29D3313000EEB16D /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				D6C23B5C29D3313000EEB16D /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D6C23B6529D3313100EEB16D /* ChickensGameTests */ = {
+			isa = PBXGroup;
+			children = (
+				D6C23B6629D3313100EEB16D /* ChickensGameTests.swift */,
+			);
+			path = ChickensGameTests;
+			sourceTree = "<group>";
+		};
+		D6C23B6F29D3313100EEB16D /* ChickensGameUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D6C23B7029D3313100EEB16D /* ChickensGameUITests.swift */,
+				D6C23B7229D3313100EEB16D /* ChickensGameUITestsLaunchTests.swift */,
+			);
+			path = ChickensGameUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D6C23B5129D3312F00EEB16D /* ChickensGame */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D6C23B7629D3313100EEB16D /* Build configuration list for PBXNativeTarget "ChickensGame" */;
+			buildPhases = (
+				D6C23B4E29D3312F00EEB16D /* Sources */,
+				D6C23B4F29D3312F00EEB16D /* Frameworks */,
+				D6C23B5029D3312F00EEB16D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ChickensGame;
+			productName = ChickensGame;
+			productReference = D6C23B5229D3312F00EEB16D /* ChickensGame.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D6C23B6129D3313100EEB16D /* ChickensGameTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D6C23B7929D3313100EEB16D /* Build configuration list for PBXNativeTarget "ChickensGameTests" */;
+			buildPhases = (
+				D6C23B5E29D3313100EEB16D /* Sources */,
+				D6C23B5F29D3313100EEB16D /* Frameworks */,
+				D6C23B6029D3313100EEB16D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D6C23B6429D3313100EEB16D /* PBXTargetDependency */,
+			);
+			name = ChickensGameTests;
+			productName = ChickensGameTests;
+			productReference = D6C23B6229D3313100EEB16D /* ChickensGameTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D6C23B6B29D3313100EEB16D /* ChickensGameUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D6C23B7C29D3313100EEB16D /* Build configuration list for PBXNativeTarget "ChickensGameUITests" */;
+			buildPhases = (
+				D6C23B6829D3313100EEB16D /* Sources */,
+				D6C23B6929D3313100EEB16D /* Frameworks */,
+				D6C23B6A29D3313100EEB16D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D6C23B6E29D3313100EEB16D /* PBXTargetDependency */,
+			);
+			name = ChickensGameUITests;
+			productName = ChickensGameUITests;
+			productReference = D6C23B6C29D3313100EEB16D /* ChickensGameUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D6C23B4A29D3312E00EEB16D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					D6C23B5129D3312F00EEB16D = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					D6C23B6129D3313100EEB16D = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = D6C23B5129D3312F00EEB16D;
+					};
+					D6C23B6B29D3313100EEB16D = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = D6C23B5129D3312F00EEB16D;
+					};
+				};
+			};
+			buildConfigurationList = D6C23B4D29D3312E00EEB16D /* Build configuration list for PBXProject "ChickensGame" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D6C23B4929D3312E00EEB16D;
+			productRefGroup = D6C23B5329D3312F00EEB16D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D6C23B5129D3312F00EEB16D /* ChickensGame */,
+				D6C23B6129D3313100EEB16D /* ChickensGameTests */,
+				D6C23B6B29D3313100EEB16D /* ChickensGameUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D6C23B5029D3312F00EEB16D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D6C23B5D29D3313000EEB16D /* Preview Assets.xcassets in Resources */,
+				D6C23B5A29D3313000EEB16D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D6C23B6029D3313100EEB16D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D6C23B6A29D3313100EEB16D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D6C23B4E29D3312F00EEB16D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D6C23B5829D3312F00EEB16D /* ContentView.swift in Sources */,
+				D6C23B5629D3312F00EEB16D /* ChickensGameApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D6C23B5E29D3313100EEB16D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D6C23B6729D3313100EEB16D /* ChickensGameTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D6C23B6829D3313100EEB16D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D6C23B7329D3313100EEB16D /* ChickensGameUITestsLaunchTests.swift in Sources */,
+				D6C23B7129D3313100EEB16D /* ChickensGameUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D6C23B6429D3313100EEB16D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D6C23B5129D3312F00EEB16D /* ChickensGame */;
+			targetProxy = D6C23B6329D3313100EEB16D /* PBXContainerItemProxy */;
+		};
+		D6C23B6E29D3313100EEB16D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D6C23B5129D3312F00EEB16D /* ChickensGame */;
+			targetProxy = D6C23B6D29D3313100EEB16D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		D6C23B7429D3313100EEB16D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D6C23B7529D3313100EEB16D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D6C23B7729D3313100EEB16D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ChickensGame/Preview Content\"";
+				DEVELOPMENT_TEAM = MCC2B4P5MZ;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Copland.ChickensGame;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D6C23B7829D3313100EEB16D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ChickensGame/Preview Content\"";
+				DEVELOPMENT_TEAM = MCC2B4P5MZ;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Copland.ChickensGame;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D6C23B7A29D3313100EEB16D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MCC2B4P5MZ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Copland.ChickensGameTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChickensGame.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ChickensGame";
+			};
+			name = Debug;
+		};
+		D6C23B7B29D3313100EEB16D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MCC2B4P5MZ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Copland.ChickensGameTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChickensGame.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ChickensGame";
+			};
+			name = Release;
+		};
+		D6C23B7D29D3313100EEB16D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MCC2B4P5MZ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Copland.ChickensGameUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ChickensGame;
+			};
+			name = Debug;
+		};
+		D6C23B7E29D3313100EEB16D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MCC2B4P5MZ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Copland.ChickensGameUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ChickensGame;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D6C23B4D29D3312E00EEB16D /* Build configuration list for PBXProject "ChickensGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D6C23B7429D3313100EEB16D /* Debug */,
+				D6C23B7529D3313100EEB16D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D6C23B7629D3313100EEB16D /* Build configuration list for PBXNativeTarget "ChickensGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D6C23B7729D3313100EEB16D /* Debug */,
+				D6C23B7829D3313100EEB16D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D6C23B7929D3313100EEB16D /* Build configuration list for PBXNativeTarget "ChickensGameTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D6C23B7A29D3313100EEB16D /* Debug */,
+				D6C23B7B29D3313100EEB16D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D6C23B7C29D3313100EEB16D /* Build configuration list for PBXNativeTarget "ChickensGameUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D6C23B7D29D3313100EEB16D /* Debug */,
+				D6C23B7E29D3313100EEB16D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D6C23B4A29D3312E00EEB16D /* Project object */;
+}
