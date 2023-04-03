@@ -25,9 +25,9 @@ func casterEntityActingUponTargetEntity(
         print("You've missed!")
     }
 	
-	gameManager.processTurn()
-    
-    
+	inputAction.processActionInternalCooldown()
+	gameManager.endTurn()
+	
 }
 
 func enviromentalActionUponPlayer(

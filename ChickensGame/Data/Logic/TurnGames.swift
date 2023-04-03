@@ -11,14 +11,15 @@ class CombatManager: ObservableObject {
     
     @Published var currentTurn = 0
     @Published var isEnemyTurn = false
-    
-    func proceedToNextTurn() {
-        currentTurn += 1
-		isEnemyTurn = true
-    }
+	
+	func processTurn() {
+		currentTurn += 1
+		isEnemyTurn.toggle()
+		print(isEnemyTurn)
+	}
 	
 	func enemyTurnDiceRoller(_ enemyAtks: [EntityAction]) -> EntityAction {
-		let dice = Int.random(in: 0...enemyAtks.count)
+		let dice = Int.random(in: 1...enemyAtks.count) - 1
 		return enemyAtks[dice]
 	}
     

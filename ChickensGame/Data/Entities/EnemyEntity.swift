@@ -56,14 +56,4 @@ extension Enemy {
 		self.activeActions.append(EnemyAttackGenerator().generateBasicAttack())
 		self.activeActions.append(EnemyAttackGenerator().generateStrongAttack())
 	}
-	
-	func validateActionCooldowns(_ currentTurn: Int) -> [EntityAction] {
-		var validAtks: [EntityAction] = []
-		for atk in activeActions {
-			if atk.isActionOffCooldown(atk, currentTurn) {
-				validAtks.append(atk)
-			}
-		}
-		return validAtks
-	}
 }

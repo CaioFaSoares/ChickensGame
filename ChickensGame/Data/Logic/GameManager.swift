@@ -44,15 +44,18 @@ class GameManager: ObservableObject {
 }
 
 extension GameManager {
-	func processTurn() {
-		combatManager.proceedToNextTurn()
-		processEnemyTurn()
+	
+	func endTurn() {
+		combatManager.processTurn()
+		if combatManager.isEnemyTurn {
+			initEnemyTurn()
+		}
 	}
 	
-	func processEnemyTurn() {
-		let validEnemyAtks = enemy.validateActionCooldowns(combatManager.currentTurn)
-		let atk = combatManager.enemyTurnDiceRoller(validEnemyAtks)
-		combatManager.proceedToNextTurn()
-		casterEntityActingUponTargetEntity(action: atk, caster: enemy, target: player, gMan: self)
+	func initEnemyTurn() {
+		let validActions = enemy.activeActions.filter { $0.isOffCooldown }
+		let rolledForAction = combatManager.enemyTurnDiceRoller(validActions)
+		casterEntityActingUponTargetEntity(action: rolledForAction, caster: enemy, target: player, gMan: self)
 	}
+	
 }
