@@ -22,12 +22,16 @@ struct MainMenuView: View {
             VStack {
                 Text("Olá, mundo.")
                 HStack {
+					Spacer()
                     TextField("HP do Player", text: $playerHP).keyboardType(.decimalPad)
                     TextField("DP do Player", text: $playerDP).keyboardType(.decimalPad)
+					Spacer()
                 }
                 HStack {
+					Spacer()
                     TextField("HP do Inimigo", text: $enemyHP).keyboardType(.decimalPad)
                     TextField("DP do Inimigo", text: $enemyDP).keyboardType(.decimalPad)
+					Spacer()
                 }
 				Button("Start match with default values")
 				{ path.append("DefaultChallenge") }.navigationDestination(for: String.self)
