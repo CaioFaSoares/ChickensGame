@@ -16,7 +16,7 @@
 		D6BE222929D6FE390012FF38 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BE222829D6FE390012FF38 /* GameManager.swift */; };
 		D6BE222E29D708410012FF38 /* TurnGames.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BE222D29D708410012FF38 /* TurnGames.swift */; };
 		D6C23B5629D3312F00EEB16D /* ChickensGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C23B5529D3312F00EEB16D /* ChickensGameApp.swift */; };
-		D6C23B5829D3312F00EEB16D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C23B5729D3312F00EEB16D /* ContentView.swift */; };
+		D6C23B5829D3312F00EEB16D /* CombatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C23B5729D3312F00EEB16D /* CombatView.swift */; };
 		D6C23B5A29D3313000EEB16D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6C23B5929D3313000EEB16D /* Assets.xcassets */; };
 		D6C23B5D29D3313000EEB16D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6C23B5C29D3313000EEB16D /* Preview Assets.xcassets */; };
 		D6C23B6729D3313100EEB16D /* ChickensGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C23B6629D3313100EEB16D /* ChickensGameTests.swift */; };
@@ -58,7 +58,7 @@
 		D6BE222D29D708410012FF38 /* TurnGames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnGames.swift; sourceTree = "<group>"; };
 		D6C23B5229D3312F00EEB16D /* ChickensGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChickensGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6C23B5529D3312F00EEB16D /* ChickensGameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChickensGameApp.swift; sourceTree = "<group>"; };
-		D6C23B5729D3312F00EEB16D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D6C23B5729D3312F00EEB16D /* CombatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombatView.swift; sourceTree = "<group>"; };
 		D6C23B5929D3313000EEB16D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D6C23B5C29D3313000EEB16D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D6C23B6229D3313100EEB16D /* ChickensGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChickensGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -156,7 +156,7 @@
 				D6BE222729D6FD430012FF38 /* Data */,
 				D6C23B5529D3312F00EEB16D /* ChickensGameApp.swift */,
 				D6BE222529D5D0830012FF38 /* MainMenuView.swift */,
-				D6C23B5729D3312F00EEB16D /* ContentView.swift */,
+				D6C23B5729D3312F00EEB16D /* CombatView.swift */,
 				D6C23B5929D3313000EEB16D /* Assets.xcassets */,
 				D6C23B5B29D3313000EEB16D /* Preview Content */,
 			);
@@ -337,7 +337,7 @@
 				D6BE222029D5B4A80012FF38 /* EnemyEntity.swift in Sources */,
 				D6BE222229D5CC590012FF38 /* EntityActions.swift in Sources */,
 				D6C23B8429D3338E00EEB16D /* EnemyActionsGenerator.swift in Sources */,
-				D6C23B5829D3312F00EEB16D /* ContentView.swift in Sources */,
+				D6C23B5829D3312F00EEB16D /* CombatView.swift in Sources */,
 				D6C23B8729D3338E00EEB16D /* ActionProtocol.swift in Sources */,
 				D6BE222E29D708410012FF38 /* TurnGames.swift in Sources */,
 				D6BE222629D5D0830012FF38 /* MainMenuView.swift in Sources */,

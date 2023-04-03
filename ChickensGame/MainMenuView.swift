@@ -29,16 +29,11 @@ struct MainMenuView: View {
                     TextField("HP do Inimigo", text: $enemyHP).keyboardType(.decimalPad)
                     TextField("DP do Inimigo", text: $enemyDP).keyboardType(.decimalPad)
                 }
-                Button("Start match") { path.append("NewView") }.navigationDestination(for: String.self)
-				{ view in
-                    if view == "NewView" {
-                        ContentView(player: (Int(playerHP)!, Int(playerDP)!), enemy: (Int(enemyHP)!, Int(enemyDP)!))
-                    }
-                }
-				Button("Start match with default values") { path.append("DefaultChallenge") }.navigationDestination(for: String.self)
+				Button("Start match with default values")
+				{ path.append("DefaultChallenge") }.navigationDestination(for: String.self)
 				{ view in
 					if view == "DefaultChallenge" {
-						ContentView(player: (12,2), enemy: (8,2))
+						CombatView(player: (12,2), enemy: (8,2))
 					}
 				}
             }
