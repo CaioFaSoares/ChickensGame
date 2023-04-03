@@ -27,7 +27,6 @@ class GameManager: ObservableObject {
 		self.player.activeActions.append(atk2)
 		
 		anyCancellable = self.player.objectWillChange.sink { [weak self] (_) in self?.objectWillChange.send() }
-			
 		anyCancellable = self.enemy.objectWillChange.sink { [weak self] (_) in self?.objectWillChange.send() }
 
 		
