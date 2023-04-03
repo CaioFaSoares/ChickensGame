@@ -28,6 +28,7 @@
 		D6C23B8729D3338E00EEB16D /* ActionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C23B8329D3338E00EEB16D /* ActionProtocol.swift */; };
 		D6C23B8B29D34F1600EEB16D /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D6C23B8A29D34F1600EEB16D /* .gitignore */; };
 		D6C23B8D29D3501A00EEB16D /* .gitattributes in Resources */ = {isa = PBXBuildFile; fileRef = D6C23B8C29D3501A00EEB16D /* .gitattributes */; };
+		FCFB6E2829DB1E9C008A1C82 /* MutatingPrint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFB6E2729DB1E9C008A1C82 /* MutatingPrint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		D6C23B8329D3338E00EEB16D /* ActionProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionProtocol.swift; sourceTree = "<group>"; };
 		D6C23B8A29D34F1600EEB16D /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		D6C23B8C29D3501A00EEB16D /* .gitattributes */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitattributes; sourceTree = "<group>"; };
+		FCFB6E2729DB1E9C008A1C82 /* MutatingPrint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MutatingPrint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 		D6C23B5429D3312F00EEB16D /* ChickensGame */ = {
 			isa = PBXGroup;
 			children = (
+				FCFB6E2629DB1E7C008A1C82 /* Resources */,
 				D6BE222729D6FD430012FF38 /* Data */,
 				D6C23B5529D3312F00EEB16D /* ChickensGameApp.swift */,
 				D6BE222529D5D0830012FF38 /* MainMenuView.swift */,
@@ -199,6 +202,14 @@
 				D6C23B8229D3338E00EEB16D /* runAction.swift */,
 			);
 			path = Actions;
+			sourceTree = "<group>";
+		};
+		FCFB6E2629DB1E7C008A1C82 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FCFB6E2729DB1E9C008A1C82 /* MutatingPrint.swift */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,6 +350,7 @@
 				D6C23B8429D3338E00EEB16D /* EnemyActionsGenerator.swift in Sources */,
 				D6C23B5829D3312F00EEB16D /* CombatView.swift in Sources */,
 				D6C23B8729D3338E00EEB16D /* ActionProtocol.swift in Sources */,
+				FCFB6E2829DB1E9C008A1C82 /* MutatingPrint.swift in Sources */,
 				D6BE222E29D708410012FF38 /* TurnGames.swift in Sources */,
 				D6BE222629D5D0830012FF38 /* MainMenuView.swift in Sources */,
 				D6C23B8629D3338E00EEB16D /* runAction.swift in Sources */,
