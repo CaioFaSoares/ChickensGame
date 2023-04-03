@@ -52,6 +52,7 @@ extension Entity {
             if currentHP < 0 {
                 currentHP = 0
                 isAlive = false
+                print("dead")
             }
         }
     }

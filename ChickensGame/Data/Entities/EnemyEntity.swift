@@ -37,8 +37,9 @@ class Enemy: Entity {
         
         self.currentHP = startingHP
         self.currentDP = startingDP
+
     }
-    
+
 }
 
 extension Enemy: Identifiable, Hashable {
@@ -49,4 +50,5 @@ extension Enemy: Identifiable, Hashable {
     public func hash(into hasher: inout Hasher) {
         return hasher.combine(identifier)
     }
+
 }
