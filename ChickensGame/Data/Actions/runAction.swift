@@ -10,7 +10,9 @@ import Foundation
 func casterEntityActingUponTargetEntity(
     action  inputAction: EntityAction,
     caster  casterEntity: (any Entity)?,
-    target  targetEntity: any Entity
+    target  targetEntity: any Entity,
+	gMan	gameManager: GameManager
+	
 ) -> Void {
     
     let hitChance = Double.random(in: 0...1)
@@ -22,6 +24,8 @@ func casterEntityActingUponTargetEntity(
     } else {
         print("You've missed!")
     }
+	
+	gameManager.processTurn()
     
     
 }

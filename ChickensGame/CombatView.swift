@@ -28,10 +28,9 @@ class GameScene: SKScene, ObservableObject {
     }
 	
 	func changeColorWhenAttacking() {
-		var colorChange = SKSpriteNode(color: .blue, size: CGSize(width: 50, height: 50))
+		let colorChange = SKSpriteNode(color: .blue, size: CGSize(width: 50, height: 50))
 		colorChange.name = "colorizer"
 		childNode(withName: "friendly")?.addChild(colorChange)
-		childNode(withName: "friendly")?.removeAllChildren()
 	}
     
 }
@@ -52,6 +51,7 @@ struct CombatView: View {
 
     var body: some View {
         VStack{
+			Text("\(gameManager.combatManager.currentTurn)")
             SpriteView(scene: gameScene)
                 .frame(width: 300, height: 400)
                 .ignoresSafeArea()
@@ -66,7 +66,7 @@ struct CombatView: View {
                 Spacer()
 				ForEach(gameManager.player.activeActions, id: \.self) { action in
                     Button(action.contextualName) {
-						casterEntityActingUponTargetEntity(action: action, caster: gameManager.player, target: gameManager.enemy)
+						casterEntityActingUponTargetEntity(action: action, caster: gameManager.player, target: gameManager.enemy, gMan: gameManager)
 						gameScene.changeColorWhenAttacking()
                     }
                     Spacer()

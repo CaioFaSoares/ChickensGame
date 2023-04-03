@@ -14,6 +14,8 @@ class GameManager: ObservableObject {
     @Published var player: Player
     @Published var enemy: Enemy
 	
+	@Published var combatManager = CombatManager()
+	
 	var anyCancellable: AnyCancellable? = nil
     
     init(player: (Int, Int), enemy: (Int, Int)) {
@@ -26,6 +28,12 @@ class GameManager: ObservableObject {
 		self.player.activeActions.append(atk1)
 		self.player.activeActions.append(atk2)
 		
+		let eAtk1 = EnemyAttackGenerator().generateBasicAttack()
+		let eAtk2 = EnemyAttackGenerator().generateStrongAttack()
+		
+		self.enemy.activeActions.append(eAtk1)
+		self.enemy.activeActions.append(eAtk2)
+		
 		anyCancellable = self.player.objectWillChange.sink { [weak self] (_) in self?.objectWillChange.send() }
 		anyCancellable = self.enemy.objectWillChange.sink { [weak self] (_) in self?.objectWillChange.send() }
 
@@ -33,4 +41,18 @@ class GameManager: ObservableObject {
 		print("Game manager has been initialized")
     }
     
+}
+
+extension GameManager {
+	func processTurn() {
+		combatManager.proceedToNextTurn()
+		processEnemyTurn()
+	}
+	
+	func processEnemyTurn() {
+		let validEnemyAtks = enemy.validateActionCooldowns(combatManager.currentTurn)
+		let atk = combatManager.enemyTurnDiceRoller(validEnemyAtks)
+		combatManager.proceedToNextTurn()
+		casterEntityActingUponTargetEntity(action: atk, caster: enemy, target: player, gMan: self)
+	}
 }
