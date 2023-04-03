@@ -28,7 +28,7 @@ class GameScene: SKScene, ObservableObject {
     
 }
 
-struct ContentView: View {
+struct CombatView: View {
     
     init (player: (Int, Int), enemy: (Int, Int)) {
         self.gameManager = GameManager(player: player, enemy: enemy)
