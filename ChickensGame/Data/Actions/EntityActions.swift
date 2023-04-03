@@ -1,15 +1,11 @@
 //
-//  newActions.swift
-//  POC_Game
+//  EntityActions.swift
+//  ChickensGame
 //
-//  Created by Caio Soares on 27/03/23.
+//  Created by Caio Soares on 30/03/23.
 //
 
 import Foundation
-
-protocol Action: ObservableObject {}
-
-// MARK -- Entity
 
 class EntityAction: Action {
     
@@ -23,8 +19,11 @@ class EntityAction: Action {
     
     //Value and accuracy of said action
     var value: Int
-    var cooldown: Int
     var accuracy: Double
+    
+    //Cooldown logic
+    var cooldown: Int
+    var lastCast: Int
     
     //Contextual information about the Action
     let internalID: Int
@@ -39,6 +38,8 @@ class EntityAction: Action {
         self.internalID = internalID
         self.internalName = internalName
         self.contextualName = contextualName
+        
+        self.lastCast = 0
     }
 }
 
@@ -52,34 +53,10 @@ extension EntityAction: Identifiable, Hashable {
     }
 }
 
-// MARK -- Enviromental Action
-
-class EnviromentalAction: Action {
-    
-    //Hashable stuff
-    var identifier: String {
-        return UUID().uuidString
-    }
-    
-    //Contextual information about the Action
-    let internalID: Int
-    let internalName: String
-    let contextualName: String
-    
-    init(internalID: Int, internalName: String, contextualName: String) {
-        self.internalID = internalID
-        self.internalName = internalName
-        self.contextualName = contextualName
-    }
-    
-}
-
-extension EnviromentalAction: Identifiable, Hashable {
-    static func == (lhs: EnviromentalAction, rhs: EnviromentalAction) -> Bool {
-        return lhs.identifier == rhs.identifier
-    }
-    
-    public func hash(into hasher: inout Hasher) {
-        return hasher.combine(identifier)
+extension EntityAction {
+    func isActionOffCooldown(_ action: EntityAction, _ currentTurn: Int) -> Bool {
+        if action.lastCast - currentTurn >= action.cooldown {
+            return true
+        } else { return false }
     }
 }

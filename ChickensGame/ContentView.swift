@@ -30,42 +30,35 @@ class GameScene: SKScene, ObservableObject {
 
 struct ContentView: View {
     
-    @ObservedObject var gameScene = GameScene(
-        size: CGSize(width: 300, height: 400)
-    )
+    init (player: (Int, Int), enemy: (Int, Int)) {
+        self.gameManager = GameManager(player: player, enemy: enemy)
+		self.gameScene = GameScene(
+			size: CGSize(width: 300, height: 400)
+		)
+		self.gameScene.spawnPlayerEntitySprite()
+		self.gameScene.spawnEnemyEntitySprite()
+    }
     
-    @StateObject var player = Player(12, 2)
-    @StateObject var enemy = Enemy(8, 1)
-    
-    @State var hasLogicBeenInitialized = false
+	@ObservedObject var gameScene: GameScene
+    @ObservedObject var gameManager: GameManager
 
     var body: some View {
         VStack{
-            Button("Initialize Game Logic") {
-                if hasLogicBeenInitialized == false {
-                    gameScene.spawnPlayerEntitySprite()
-                    gameScene.spawnEnemyEntitySprite()
-                    player.activeActions.append(EntityAction(isHealing: false, value: 3, cooldown: 1, accuracy: 0.9, internalID: 0001, internalName: "basicAttack", contextualName: "Basic Attack"))
-                    player.activeActions.append(EntityAction(isHealing: false, value: 6, cooldown: 2, accuracy: 0.7, internalID: 0002, internalName: "strongAttack", contextualName: "Strong Attack"))
-                    print("init logic")
-                    hasLogicBeenInitialized = true
-                } else { print("logic has already been initd") }
-            }
             SpriteView(scene: gameScene)
                 .frame(width: 300, height: 400)
                 .ignoresSafeArea()
             HStack {
                 Spacer()
-                Text("Player HP: \(player.currentHP)")
+				Text("Player HP: \(gameManager.player.currentHP)")
                 Spacer()
-                Text("Enemy HP: \(enemy.currentHP)")
+				Text("Enemy HP: \(gameManager.enemy.currentHP)")
                 Spacer()
             }
             HStack {
                 Spacer()
-                ForEach(player.activeActions, id: \.self) { action in
+				ForEach(gameManager.player.activeActions, id: \.self) { action in
                     Button(action.contextualName) {
-                        casterEntityActingUponTargetEntity(action: action, caster: player, target: enemy)
+						casterEntityActingUponTargetEntity(action: action, caster: gameManager.player, target: gameManager.enemy)
                     }
                     Spacer()
                 }
@@ -73,9 +66,9 @@ struct ContentView: View {
         }
     }
 }
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
+//
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentView()
+//    }
+//}

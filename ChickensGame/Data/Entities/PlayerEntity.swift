@@ -14,6 +14,8 @@ class Player: Entity {
         return UUID().uuidString
     }
     
+    var isAlive = Bool(true)
+    
     //Player Default Stats
     let startingHP: Int
     let startingDP: Int
@@ -36,6 +38,7 @@ class Player: Entity {
         _ startingHP: Int,
         _ startingDP: Int
     ) {
+        
         self.startingHP = startingHP
         self.startingDP = startingDP
         
@@ -46,19 +49,6 @@ class Player: Entity {
         self.currentDP = startingDP
         
         self.currentScore = 0
-    }
-    
-    func updateCurrentHP(deltaHP: Int, isHealing: Bool) {
-        if isHealing {
-            currentHP += deltaHP
-        } else {
-            let composition = deltaHP - currentDP
-            currentHP -= composition
-        }
-    }
-    
-    func updateCurrentDP(deltaDP: Int) {
-        //
     }
     
 }

@@ -9,10 +9,13 @@ import Foundation
 
 class Enemy: Entity {
     
+    
     //Identifiables
     var identifier: String {
         return UUID().uuidString
     }
+    
+    var isAlive = Bool(true)
     
     //Enemy Maximum Stats
     @Published var maxHP: Int
@@ -34,19 +37,6 @@ class Enemy: Entity {
         
         self.currentHP = startingHP
         self.currentDP = startingDP
-    }
-    
-    func updateCurrentHP(deltaHP: Int, isHealing: Bool) {
-        if isHealing {
-            currentHP += deltaHP
-        } else {
-            let composition = deltaHP - currentDP
-            currentHP -= composition
-        }
-    }
-    
-    func updateCurrentDP(deltaDP: Int) {
-        //
     }
     
 }

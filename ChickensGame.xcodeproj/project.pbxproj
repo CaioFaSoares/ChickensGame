@@ -10,6 +10,11 @@
 		D6BE221C29D5B44F0012FF38 /* EntityProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BE221B29D5B44F0012FF38 /* EntityProtocol.swift */; };
 		D6BE221E29D5B46E0012FF38 /* PlayerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BE221D29D5B46E0012FF38 /* PlayerEntity.swift */; };
 		D6BE222029D5B4A80012FF38 /* EnemyEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BE221F29D5B4A80012FF38 /* EnemyEntity.swift */; };
+		D6BE222229D5CC590012FF38 /* EntityActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BE222129D5CC590012FF38 /* EntityActions.swift */; };
+		D6BE222429D5CC970012FF38 /* EnviromentalAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BE222329D5CC970012FF38 /* EnviromentalAction.swift */; };
+		D6BE222629D5D0830012FF38 /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BE222529D5D0830012FF38 /* MainMenuView.swift */; };
+		D6BE222929D6FE390012FF38 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BE222829D6FE390012FF38 /* GameManager.swift */; };
+		D6BE222E29D708410012FF38 /* TurnGames.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BE222D29D708410012FF38 /* TurnGames.swift */; };
 		D6C23B5629D3312F00EEB16D /* ChickensGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C23B5529D3312F00EEB16D /* ChickensGameApp.swift */; };
 		D6C23B5829D3312F00EEB16D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C23B5729D3312F00EEB16D /* ContentView.swift */; };
 		D6C23B5A29D3313000EEB16D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6C23B5929D3313000EEB16D /* Assets.xcassets */; };
@@ -17,10 +22,10 @@
 		D6C23B6729D3313100EEB16D /* ChickensGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C23B6629D3313100EEB16D /* ChickensGameTests.swift */; };
 		D6C23B7129D3313100EEB16D /* ChickensGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C23B7029D3313100EEB16D /* ChickensGameUITests.swift */; };
 		D6C23B7329D3313100EEB16D /* ChickensGameUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C23B7229D3313100EEB16D /* ChickensGameUITestsLaunchTests.swift */; };
-		D6C23B8429D3338E00EEB16D /* EnemyActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C23B8029D3338E00EEB16D /* EnemyActions.swift */; };
-		D6C23B8529D3338E00EEB16D /* PlayerActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C23B8129D3338E00EEB16D /* PlayerActions.swift */; };
+		D6C23B8429D3338E00EEB16D /* EnemyActionsGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C23B8029D3338E00EEB16D /* EnemyActionsGenerator.swift */; };
+		D6C23B8529D3338E00EEB16D /* PlayerActionsGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C23B8129D3338E00EEB16D /* PlayerActionsGenerator.swift */; };
 		D6C23B8629D3338E00EEB16D /* runAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C23B8229D3338E00EEB16D /* runAction.swift */; };
-		D6C23B8729D3338E00EEB16D /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C23B8329D3338E00EEB16D /* Actions.swift */; };
+		D6C23B8729D3338E00EEB16D /* ActionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C23B8329D3338E00EEB16D /* ActionProtocol.swift */; };
 		D6C23B8B29D34F1600EEB16D /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D6C23B8A29D34F1600EEB16D /* .gitignore */; };
 		D6C23B8D29D3501A00EEB16D /* .gitattributes in Resources */ = {isa = PBXBuildFile; fileRef = D6C23B8C29D3501A00EEB16D /* .gitattributes */; };
 /* End PBXBuildFile section */
@@ -46,6 +51,11 @@
 		D6BE221B29D5B44F0012FF38 /* EntityProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityProtocol.swift; sourceTree = "<group>"; };
 		D6BE221D29D5B46E0012FF38 /* PlayerEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerEntity.swift; sourceTree = "<group>"; };
 		D6BE221F29D5B4A80012FF38 /* EnemyEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnemyEntity.swift; sourceTree = "<group>"; };
+		D6BE222129D5CC590012FF38 /* EntityActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityActions.swift; sourceTree = "<group>"; };
+		D6BE222329D5CC970012FF38 /* EnviromentalAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnviromentalAction.swift; sourceTree = "<group>"; };
+		D6BE222529D5D0830012FF38 /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
+		D6BE222829D6FE390012FF38 /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
+		D6BE222D29D708410012FF38 /* TurnGames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnGames.swift; sourceTree = "<group>"; };
 		D6C23B5229D3312F00EEB16D /* ChickensGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChickensGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6C23B5529D3312F00EEB16D /* ChickensGameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChickensGameApp.swift; sourceTree = "<group>"; };
 		D6C23B5729D3312F00EEB16D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -56,10 +66,10 @@
 		D6C23B6C29D3313100EEB16D /* ChickensGameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChickensGameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6C23B7029D3313100EEB16D /* ChickensGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChickensGameUITests.swift; sourceTree = "<group>"; };
 		D6C23B7229D3313100EEB16D /* ChickensGameUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChickensGameUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		D6C23B8029D3338E00EEB16D /* EnemyActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnemyActions.swift; sourceTree = "<group>"; };
-		D6C23B8129D3338E00EEB16D /* PlayerActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerActions.swift; sourceTree = "<group>"; };
+		D6C23B8029D3338E00EEB16D /* EnemyActionsGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnemyActionsGenerator.swift; sourceTree = "<group>"; };
+		D6C23B8129D3338E00EEB16D /* PlayerActionsGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerActionsGenerator.swift; sourceTree = "<group>"; };
 		D6C23B8229D3338E00EEB16D /* runAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = runAction.swift; sourceTree = "<group>"; };
-		D6C23B8329D3338E00EEB16D /* Actions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
+		D6C23B8329D3338E00EEB16D /* ActionProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionProtocol.swift; sourceTree = "<group>"; };
 		D6C23B8A29D34F1600EEB16D /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		D6C23B8C29D3501A00EEB16D /* .gitattributes */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitattributes; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -99,6 +109,25 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
+		D6BE222729D6FD430012FF38 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				D6BE222A29D6FE420012FF38 /* Logic */,
+				D6BE221A29D5B43D0012FF38 /* Entities */,
+				D6C23B7F29D3338E00EEB16D /* Actions */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		D6BE222A29D6FE420012FF38 /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				D6BE222829D6FE390012FF38 /* GameManager.swift */,
+				D6BE222D29D708410012FF38 /* TurnGames.swift */,
+			);
+			path = Logic;
+			sourceTree = "<group>";
+		};
 		D6C23B4929D3312E00EEB16D = {
 			isa = PBXGroup;
 			children = (
@@ -124,9 +153,9 @@
 		D6C23B5429D3312F00EEB16D /* ChickensGame */ = {
 			isa = PBXGroup;
 			children = (
-				D6BE221A29D5B43D0012FF38 /* Entities */,
-				D6C23B7F29D3338E00EEB16D /* Actions */,
+				D6BE222729D6FD430012FF38 /* Data */,
 				D6C23B5529D3312F00EEB16D /* ChickensGameApp.swift */,
+				D6BE222529D5D0830012FF38 /* MainMenuView.swift */,
 				D6C23B5729D3312F00EEB16D /* ContentView.swift */,
 				D6C23B5929D3313000EEB16D /* Assets.xcassets */,
 				D6C23B5B29D3313000EEB16D /* Preview Content */,
@@ -162,10 +191,12 @@
 		D6C23B7F29D3338E00EEB16D /* Actions */ = {
 			isa = PBXGroup;
 			children = (
-				D6C23B8329D3338E00EEB16D /* Actions.swift */,
+				D6C23B8329D3338E00EEB16D /* ActionProtocol.swift */,
+				D6BE222129D5CC590012FF38 /* EntityActions.swift */,
+				D6C23B8129D3338E00EEB16D /* PlayerActionsGenerator.swift */,
+				D6C23B8029D3338E00EEB16D /* EnemyActionsGenerator.swift */,
+				D6BE222329D5CC970012FF38 /* EnviromentalAction.swift */,
 				D6C23B8229D3338E00EEB16D /* runAction.swift */,
-				D6C23B8029D3338E00EEB16D /* EnemyActions.swift */,
-				D6C23B8129D3338E00EEB16D /* PlayerActions.swift */,
 			);
 			path = Actions;
 			sourceTree = "<group>";
@@ -302,15 +333,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D6C23B8529D3338E00EEB16D /* PlayerActions.swift in Sources */,
+				D6C23B8529D3338E00EEB16D /* PlayerActionsGenerator.swift in Sources */,
 				D6BE222029D5B4A80012FF38 /* EnemyEntity.swift in Sources */,
-				D6C23B8429D3338E00EEB16D /* EnemyActions.swift in Sources */,
+				D6BE222229D5CC590012FF38 /* EntityActions.swift in Sources */,
+				D6C23B8429D3338E00EEB16D /* EnemyActionsGenerator.swift in Sources */,
 				D6C23B5829D3312F00EEB16D /* ContentView.swift in Sources */,
-				D6C23B8729D3338E00EEB16D /* Actions.swift in Sources */,
+				D6C23B8729D3338E00EEB16D /* ActionProtocol.swift in Sources */,
+				D6BE222E29D708410012FF38 /* TurnGames.swift in Sources */,
+				D6BE222629D5D0830012FF38 /* MainMenuView.swift in Sources */,
 				D6C23B8629D3338E00EEB16D /* runAction.swift in Sources */,
 				D6C23B5629D3312F00EEB16D /* ChickensGameApp.swift in Sources */,
 				D6BE221E29D5B46E0012FF38 /* PlayerEntity.swift in Sources */,
 				D6BE221C29D5B44F0012FF38 /* EntityProtocol.swift in Sources */,
+				D6BE222429D5CC970012FF38 /* EnviromentalAction.swift in Sources */,
+				D6BE222929D6FE390012FF38 /* GameManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
