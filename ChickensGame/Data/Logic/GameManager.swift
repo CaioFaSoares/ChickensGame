@@ -47,7 +47,7 @@ extension GameManager {
 	
 	func endTurn() {
 		combatManager.processTurn()
-		waitSomeAmountOfMiliseconds(2, checkIfItsEnemyTurn())
+		checkIfItsEnemyTurn()
 	}
 	
 	func checkIfItsEnemyTurn() {
