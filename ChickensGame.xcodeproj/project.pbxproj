@@ -29,6 +29,7 @@
 		D6C23B8729D3338E00EEB16D /* ActionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C23B8329D3338E00EEB16D /* ActionProtocol.swift */; };
 		D6C23B8B29D34F1600EEB16D /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D6C23B8A29D34F1600EEB16D /* .gitignore */; };
 		D6C23B8D29D3501A00EEB16D /* .gitattributes in Resources */ = {isa = PBXBuildFile; fileRef = D6C23B8C29D3501A00EEB16D /* .gitattributes */; };
+		FCD1FB1529DC49F2007AF089 /* PrintOnlyInDebug.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD1FB1429DC49F2007AF089 /* PrintOnlyInDebug.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		D6C23B8329D3338E00EEB16D /* ActionProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionProtocol.swift; sourceTree = "<group>"; };
 		D6C23B8A29D34F1600EEB16D /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		D6C23B8C29D3501A00EEB16D /* .gitattributes */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitattributes; sourceTree = "<group>"; };
+		FCD1FB1429DC49F2007AF089 /* PrintOnlyInDebug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintOnlyInDebug.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 		D6C23B5429D3312F00EEB16D /* ChickensGame */ = {
 			isa = PBXGroup;
 			children = (
+				FCD1FB1629DC49F8007AF089 /* Utility */,
 				D6BE222729D6FD430012FF38 /* Data */,
 				D6C23B5529D3312F00EEB16D /* ChickensGameApp.swift */,
 				D6BE222529D5D0830012FF38 /* MainMenuView.swift */,
@@ -202,6 +205,14 @@
 				D6C23B8229D3338E00EEB16D /* runAction.swift */,
 			);
 			path = Actions;
+			sourceTree = "<group>";
+		};
+		FCD1FB1629DC49F8007AF089 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				FCD1FB1429DC49F2007AF089 /* PrintOnlyInDebug.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -350,6 +361,7 @@
 				D6BE221E29D5B46E0012FF38 /* PlayerEntity.swift in Sources */,
 				D6BE221C29D5B44F0012FF38 /* EntityProtocol.swift in Sources */,
 				D6BE222429D5CC970012FF38 /* EnviromentalAction.swift in Sources */,
+				FCD1FB1529DC49F2007AF089 /* PrintOnlyInDebug.swift in Sources */,
 				D6BE222929D6FE390012FF38 /* GameManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
