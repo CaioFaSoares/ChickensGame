@@ -10,14 +10,14 @@ import Foundation
 class EnemyAttackGenerator {
     func generateBasicAttack() -> EntityAction {
         return EntityAction(isHealing: false,
-                            value: 3, cooldown: 1, accuracy: 0.70,
+                            value: 3, cooldown: 0, accuracy: 0.70,
                             internalID: 0001, internalName: "enemy_basicAttack_0001",
                             contextualName: "Basic Attack!")
     }
     
     func generateStrongAttack() -> EntityAction {
         return EntityAction(isHealing: false,
-                            value: 6, cooldown: 2, accuracy: 0.40,
+                            value: 6, cooldown: 1, accuracy: 0.40,
                             internalID: 0002, internalName: "enemy_strongAttack_0002",
                             contextualName: "Strong Attack!")
     }

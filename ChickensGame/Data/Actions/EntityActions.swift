@@ -23,7 +23,8 @@ class EntityAction: Action {
     
     //Cooldown logic
     var cooldown: Int
-    var lastCast: Int
+    var turnsLeftUntilIsOffCooldown = 0
+	var isOffCooldown = true
     
     //Contextual information about the Action
     let internalID: Int
@@ -38,8 +39,6 @@ class EntityAction: Action {
         self.internalID = internalID
         self.internalName = internalName
         self.contextualName = contextualName
-        
-        self.lastCast = 0
     }
 }
 
@@ -54,9 +53,10 @@ extension EntityAction: Identifiable, Hashable {
 }
 
 extension EntityAction {
-    func isActionOffCooldown(_ action: EntityAction, _ currentTurn: Int) -> Bool {
-        if action.lastCast - currentTurn >= action.cooldown {
-            return true
-        } else { return false }
-    }
+	func processActionInternalCooldown() {
+		turnsLeftUntilIsOffCooldown = cooldown
+		if turnsLeftUntilIsOffCooldown == 0 {
+			isOffCooldown = true
+		} else { isOffCooldown = false }
+	}
 }

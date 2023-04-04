@@ -17,6 +17,7 @@ class GameScene: SKScene, ObservableObject {
     func spawnPlayerEntitySprite() {
         let friendly = SKSpriteNode(color: .green, size: CGSize(width: 50, height: 50))
         friendly.position = CGPoint(x: 50, y: 25)
+		friendly.name = "friendly"
         addChild(friendly)
     }
     
@@ -25,6 +26,12 @@ class GameScene: SKScene, ObservableObject {
         enemy.position = CGPoint(x: 250, y: 25)
         addChild(enemy)
     }
+	
+	func changeColorWhenAttacking() {
+		let colorChange = SKSpriteNode(color: .blue, size: CGSize(width: 50, height: 50))
+		colorChange.name = "colorizer"
+		childNode(withName: "friendly")?.addChild(colorChange)
+	}
     
 }
 
@@ -44,6 +51,7 @@ struct CombatView: View {
 
     var body: some View {
         VStack{
+			Text("\(gameManager.combatManager.currentTurn)")
             SpriteView(scene: gameScene)
                 .frame(width: 300, height: 400)
                 .ignoresSafeArea()
@@ -58,7 +66,8 @@ struct CombatView: View {
                 Spacer()
 				ForEach(gameManager.player.activeActions, id: \.self) { action in
                     Button(action.contextualName) {
-						casterEntityActingUponTargetEntity(action: action, caster: gameManager.player, target: gameManager.enemy)
+						casterEntityActingUponTargetEntity(action: action, caster: gameManager.player, target: gameManager.enemy, gMan: gameManager)
+						gameScene.changeColorWhenAttacking()
                     }
                     Spacer()
                 }

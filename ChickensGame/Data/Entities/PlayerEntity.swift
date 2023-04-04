@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Player: Entity {
+class Player: Entity, ObservableObject {
     
     //Identifiables
     var identifier: String {

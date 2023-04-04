@@ -50,3 +50,10 @@ extension Enemy: Identifiable, Hashable {
         return hasher.combine(identifier)
     }
 }
+
+extension Enemy {
+	func generateAttacks() {
+		self.activeActions.append(EnemyAttackGenerator().generateBasicAttack())
+		self.activeActions.append(EnemyAttackGenerator().generateStrongAttack())
+	}
+}
