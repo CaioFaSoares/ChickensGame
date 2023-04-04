@@ -40,7 +40,6 @@ class GameManager: ObservableObject {
 		
 		print("Game manager has been initialized")
     }
-    
 }
 
 extension GameManager {

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Player: Entity, ObservableObject {
+class Player: PlayerProtocol {
     
     //Identifiables
     var identifier: String {
@@ -17,8 +17,8 @@ class Player: Entity, ObservableObject {
     var isAlive = Bool(true)
     
     //Player Default Stats
-    let startingHP: Int
-    let startingDP: Int
+	var startingHP: Int
+	var startingDP: Int
     
     //Player Maximum Stats
     @Published var maxHP: Int

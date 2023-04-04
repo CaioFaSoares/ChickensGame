@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D622DCD729DB6E3A00233269 /* Sleep.swift in Sources */ = {isa = PBXBuildFile; fileRef = D622DCD629DB6E3A00233269 /* Sleep.swift */; };
 		D659AFEF29DC6C140094702E /* CombatScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D659AFEE29DC6C140094702E /* CombatScene.swift */; };
+		D659AFF229DC6C770094702E /* PlayerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D659AFF129DC6C770094702E /* PlayerProtocol.swift */; };
 		D6BE221C29D5B44F0012FF38 /* EntityProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BE221B29D5B44F0012FF38 /* EntityProtocol.swift */; };
 		D6BE221E29D5B46E0012FF38 /* PlayerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BE221D29D5B46E0012FF38 /* PlayerEntity.swift */; };
 		D6BE222029D5B4A80012FF38 /* EnemyEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BE221F29D5B4A80012FF38 /* EnemyEntity.swift */; };
@@ -53,6 +54,7 @@
 /* Begin PBXFileReference section */
 		D622DCD629DB6E3A00233269 /* Sleep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sleep.swift; sourceTree = "<group>"; };
 		D659AFEE29DC6C140094702E /* CombatScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombatScene.swift; sourceTree = "<group>"; };
+		D659AFF129DC6C770094702E /* PlayerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerProtocol.swift; sourceTree = "<group>"; };
 		D6BE221B29D5B44F0012FF38 /* EntityProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityProtocol.swift; sourceTree = "<group>"; };
 		D6BE221D29D5B46E0012FF38 /* PlayerEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerEntity.swift; sourceTree = "<group>"; };
 		D6BE221F29D5B4A80012FF38 /* EnemyEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnemyEntity.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				D6BE221B29D5B44F0012FF38 /* EntityProtocol.swift */,
+				D659AFF129DC6C770094702E /* PlayerProtocol.swift */,
 				D6BE221D29D5B46E0012FF38 /* PlayerEntity.swift */,
 				D6BE221F29D5B4A80012FF38 /* EnemyEntity.swift */,
 			);
@@ -380,6 +383,7 @@
 				D6BE221E29D5B46E0012FF38 /* PlayerEntity.swift in Sources */,
 				D6BE221C29D5B44F0012FF38 /* EntityProtocol.swift in Sources */,
 				D6BE222429D5CC970012FF38 /* EnviromentalAction.swift in Sources */,
+				D659AFF229DC6C770094702E /* PlayerProtocol.swift in Sources */,
 				FCD1FB1529DC49F2007AF089 /* PrintOnlyInDebug.swift in Sources */,
 				D6BE222929D6FE390012FF38 /* GameManager.swift in Sources */,
 				D659AFEF29DC6C140094702E /* CombatScene.swift in Sources */,

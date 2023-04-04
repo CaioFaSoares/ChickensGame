@@ -24,33 +24,52 @@ struct CombatView: View {
 
     var body: some View {
         VStack{
-			Text("\(gameManager.combatManager.currentTurn)")
+			ZStack {
+				Spacer()
+				VStack{
+					Spacer()
+					Text("\(gameManager.combatManager.currentTurn)")
+					Spacer()
+					HStack {
+						Spacer()
+						Text("Player HP: \(gameManager.player.currentHP)")
+						Spacer()
+						Text("Enemy HP: \(gameManager.enemy.currentHP)")
+						Spacer()
+					}
+					Spacer()
+				}
+				Spacer()
+				.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 4)
+				.ignoresSafeArea()
+			}
             SpriteView(scene: gameScene)
-                .frame(width: 300, height: 400)
+				.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 2)
                 .ignoresSafeArea()
-            HStack {
-                Spacer()
-				Text("Player HP: \(gameManager.player.currentHP)")
-                Spacer()
-				Text("Enemy HP: \(gameManager.enemy.currentHP)")
-                Spacer()
-            }
-            HStack {
-                Spacer()
-				ForEach(gameManager.player.activeActions, id: \.self) { action in
-                    Button(action.contextualName) {
-						casterEntityActingUponTargetEntity(action: action, caster: gameManager.player, target: gameManager.enemy, gMan: gameManager)
-						gameScene.changeColorWhenAttacking()
-                    }
-                    Spacer()
-                }
-            }
+			ZStack{
+				VStack{
+					Spacer()
+					HStack {
+						Spacer()
+						ForEach(gameManager.player.activeActions, id: \.self) { action in
+							Button(action.contextualName) {
+								casterEntityActingUponTargetEntity(action: action, caster: gameManager.player, target: gameManager.enemy, gMan: gameManager)
+								gameScene.changeColorWhenAttacking()
+							}
+							Spacer()
+						}
+					}
+					Spacer()
+				}
+				.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 4)
+				.ignoresSafeArea()
+			}
         }
     }
 }
-//
-//struct ContentView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ContentView()
-//    }
-//}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        CombatView(player: (12,2), enemy: (8,2))
+    }
+}
