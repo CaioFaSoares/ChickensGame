@@ -15,34 +15,33 @@ struct MainMenuView: View {
     @State var enemyHP = String("")
     @State var enemyDP = String("")
     
-    @State private var path = NavigationPath()
+	@State var showCombatView: Bool = false
+	
+	var combatDelegate = combatDelegate()
     
     var body: some View {
-        NavigationStack(path: $path) {
-            VStack {
-                Text("Olá, mundo.")
-                HStack {
+		if showCombatView {
+			CombatView(player: (12,2), enemy: (8,2), delegate: combatDelegate)
+		} else {
+			VStack {
+				Text("Olá, mundo.")
+				HStack {
 					Spacer()
-                    TextField("HP do Player", text: $playerHP).keyboardType(.decimalPad)
-                    TextField("DP do Player", text: $playerDP).keyboardType(.decimalPad)
+					TextField("HP do Player", text: $playerHP).keyboardType(.decimalPad)
+					TextField("DP do Player", text: $playerDP).keyboardType(.decimalPad)
 					Spacer()
-                }
-                HStack {
-					Spacer()
-                    TextField("HP do Inimigo", text: $enemyHP).keyboardType(.decimalPad)
-                    TextField("DP do Inimigo", text: $enemyDP).keyboardType(.decimalPad)
-					Spacer()
-                }
-				Button("Start match with default values")
-				{ path.append("DefaultChallenge") }.navigationDestination(for: String.self)
-				{ view in
-					if view == "DefaultChallenge" {
-						CombatView(player: (12,2), enemy: (8,2))
-					}
 				}
-            }
-			.navigationBarBackButtonHidden(true)
-        }
+				HStack {
+					Spacer()
+					TextField("HP do Inimigo", text: $enemyHP).keyboardType(.decimalPad)
+					TextField("DP do Inimigo", text: $enemyDP).keyboardType(.decimalPad)
+					Spacer()
+				}
+				Button("Start match with default values") {
+					showCombatView.toggle()
+				}
+			}
+		}
     }
 }
 

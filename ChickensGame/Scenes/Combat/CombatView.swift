@@ -8,15 +8,21 @@
 import SwiftUI
 import SpriteKit
 
+protocol combatDelegate {
+	func returnAfterFightIsComplete()
+}
+
 struct CombatView: View {
     
-    init (player: (Int, Int), enemy: (Int, Int)) {
+	init (player: (Int, Int), enemy: (Int, Int), delegate: combatDelegate) {
         self.gameManager = GameManager(player: player, enemy: enemy)
-		self.gameScene = CombatScene(
-			size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 2)
-		)
+		self.gameScene = CombatScene(size: CGSize(width: UIScreen.main.bounds.width,
+												  height: UIScreen.main.bounds.height / 2))
 		self.gameScene.spawnEntities()
+		self.delegate = delegate
     }
+	
+	var delegate: combatDelegate
     
 	@ObservedObject var gameScene: CombatScene
     @ObservedObject var gameManager: GameManager
@@ -65,6 +71,12 @@ struct CombatView: View {
         }
 		.navigationBarBackButtonHidden(true)
     }
+}
+
+extension CombatView {
+	func returnAfterFightIsComplete() {
+		
+	}
 }
 
 struct ContentView_Previews: PreviewProvider {

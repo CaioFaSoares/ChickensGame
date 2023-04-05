@@ -20,7 +20,7 @@ class CombatScene: SKScene, ObservableObject {
 	}
 	
 	func spawnPlayerEntitySpriteWithTexture() {
-		let player = SKSpriteNode(texture: SKTexture(imageNamed: "Player"))
+		let player = SKSpriteNode(imageNamed: "Player")
 		player.scale(to: defaultScale)
 		player.position = CGPoint(x: playerXSP,
 								  y: playerYSP)
@@ -29,7 +29,7 @@ class CombatScene: SKScene, ObservableObject {
 	}
 	
 	func spawnEnemyEntitySpriteWithTexture() {
-		let enemy = SKSpriteNode(texture: SKTexture(imageNamed: "Enemy"))
+		let enemy = SKSpriteNode(imageNamed: "Enemy")
 		enemy.scale(to: defaultScale)
 		enemy.position = CGPoint(x: UIScreen.main.bounds.width - playerXSP,
 								 y: playerYSP)
@@ -37,7 +37,17 @@ class CombatScene: SKScene, ObservableObject {
 		addChild(enemy)
 	}
 	
+	func spawnBackgrounds() {
+		let background = SKSpriteNode(imageNamed: "Floor")
+		background.position = CGPoint(x: UIScreen.main.bounds.width / 2,
+									  y: UIScreen.main.bounds.height / 4)
+		background.scale(to: CGSize(width: UIScreen.main.bounds.width,
+									height: UIScreen.main.bounds.height / 2))
+		addChild(background)
+	}
+	
 	func spawnEntities() {
+		spawnBackgrounds()
 		spawnEnemyEntitySpriteWithTexture()
 		spawnPlayerEntitySpriteWithTexture()
 	}
