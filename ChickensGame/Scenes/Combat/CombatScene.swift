@@ -10,27 +10,36 @@ import SpriteKit
 
 class CombatScene: SKScene, ObservableObject {
 	
+	let defaultScale = CGSize(width: UIScreen.main.bounds.width / 6, height:  UIScreen.main.bounds.height / 6 / 2)
+	
+	let playerXSP = UIScreen.main.bounds.width / 6
+	let playerYSP = UIScreen.main.bounds.width / 6
+	
 	override func didMove(to view: SKView) {
 		physicsBody = SKPhysicsBody(edgeLoopFrom: frame)
 	}
 	
-	func spawnPlayerEntitySprite() {
-		let friendly = SKSpriteNode(color: .green, size: CGSize(width: 50, height: 50))
-		friendly.position = CGPoint(x: 50, y: 25)
-		friendly.name = "friendly"
-		addChild(friendly)
+	func spawnPlayerEntitySpriteWithTexture() {
+		let player = SKSpriteNode(texture: SKTexture(imageNamed: "Player"))
+		player.scale(to: defaultScale)
+		player.position = CGPoint(x: playerXSP,
+								  y: playerYSP)
+		player.name = "player"
+		addChild(player)
 	}
 	
-	func spawnEnemyEntitySprite() {
-		let enemy = SKSpriteNode(color: .red, size: CGSize(width: 50, height: 50))
-		enemy.position = CGPoint(x: 250, y: 25)
+	func spawnEnemyEntitySpriteWithTexture() {
+		let enemy = SKSpriteNode(texture: SKTexture(imageNamed: "Enemy"))
+		enemy.scale(to: defaultScale)
+		enemy.position = CGPoint(x: UIScreen.main.bounds.width - playerXSP,
+								 y: playerYSP)
+		enemy.name = "enemy"
 		addChild(enemy)
 	}
 	
-	func changeColorWhenAttacking() {
-		let colorChange = SKSpriteNode(color: .blue, size: CGSize(width: 50, height: 50))
-		colorChange.name = "colorizer"
-		childNode(withName: "friendly")?.addChild(colorChange)
+	func spawnEntities() {
+		spawnEnemyEntitySpriteWithTexture()
+		spawnPlayerEntitySpriteWithTexture()
 	}
 	
 }

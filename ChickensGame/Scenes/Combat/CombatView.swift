@@ -13,10 +13,9 @@ struct CombatView: View {
     init (player: (Int, Int), enemy: (Int, Int)) {
         self.gameManager = GameManager(player: player, enemy: enemy)
 		self.gameScene = CombatScene(
-			size: CGSize(width: 300, height: 400)
+			size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 2)
 		)
-		self.gameScene.spawnPlayerEntitySprite()
-		self.gameScene.spawnEnemyEntitySprite()
+		self.gameScene.spawnEntities()
     }
     
 	@ObservedObject var gameScene: CombatScene
@@ -54,7 +53,6 @@ struct CombatView: View {
 						ForEach(gameManager.player.activeActions, id: \.self) { action in
 							Button(action.contextualName) {
 								casterEntityActingUponTargetEntity(action: action, caster: gameManager.player, target: gameManager.enemy, gMan: gameManager)
-								gameScene.changeColorWhenAttacking()
 							}
 							Spacer()
 						}
@@ -65,6 +63,7 @@ struct CombatView: View {
 				.ignoresSafeArea()
 			}
         }
+		.navigationBarBackButtonHidden(true)
     }
 }
 
