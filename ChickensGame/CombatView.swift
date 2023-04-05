@@ -64,7 +64,7 @@ struct CombatView: View {
             }
             HStack {
                 Spacer()
-				ForEach(gameManager.player.activeActions, id: \.self) { action in
+                ForEach(gameManager.player.activeActions, id: \.self) { action in
                     Button(action.contextualName) {
 						casterEntityActingUponTargetEntity(action: action, caster: gameManager.player, target: gameManager.enemy, gMan: gameManager)
 						gameScene.changeColorWhenAttacking()

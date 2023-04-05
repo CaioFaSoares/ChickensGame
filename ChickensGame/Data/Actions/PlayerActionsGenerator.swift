@@ -21,4 +21,5 @@ class PlayerAttackGenerator {
                             internalID: 0002, internalName: "player_strongAttack_0002",
                             contextualName: "Strong Attack!")
     }
+
 }
