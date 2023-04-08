@@ -24,9 +24,11 @@ class GameManager: ObservableObject {
 		
 		let atk1 = PlayerAttackGenerator().generateBasicAttack()
 		let atk2 = PlayerAttackGenerator().generateStrongAttack()
+        let atk3 = PlayerAttackGenerator().generateSkillHealing()
 		
 		self.player.activeActions.append(atk1)
 		self.player.activeActions.append(atk2)
+        self.player.activeActions.append(atk3)
 		
 		let eAtk1 = EnemyAttackGenerator().generateBasicAttack()
 		let eAtk2 = EnemyAttackGenerator().generateStrongAttack()
