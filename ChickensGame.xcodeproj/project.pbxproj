@@ -31,6 +31,8 @@
 		D6C23B8D29D3501A00EEB16D /* .gitattributes in Resources */ = {isa = PBXBuildFile; fileRef = D6C23B8C29D3501A00EEB16D /* .gitattributes */; };
 		FCD1FB1529DC49F2007AF089 /* PrintOnlyInDebug.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD1FB1429DC49F2007AF089 /* PrintOnlyInDebug.swift */; };
 		FCD1FB1829DDAE3E007AF089 /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD1FB1729DDAE3E007AF089 /* ActionButton.swift */; };
+		FCD1FB2129E22B26007AF089 /* PlayerActionsGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD1FB2029E22B26007AF089 /* PlayerActionsGeneratorTests.swift */; };
+		FCD1FB2329E23095007AF089 /* EntityActionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD1FB2229E23095007AF089 /* EntityActionsTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +80,8 @@
 		D6C23B8C29D3501A00EEB16D /* .gitattributes */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitattributes; sourceTree = "<group>"; };
 		FCD1FB1429DC49F2007AF089 /* PrintOnlyInDebug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintOnlyInDebug.swift; sourceTree = "<group>"; };
 		FCD1FB1729DDAE3E007AF089 /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
+		FCD1FB2029E22B26007AF089 /* PlayerActionsGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerActionsGeneratorTests.swift; sourceTree = "<group>"; };
+		FCD1FB2229E23095007AF089 /* EntityActionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityActionsTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,7 +171,6 @@
 				D6C23B5729D3312F00EEB16D /* CombatView.swift */,
 				D6C23B5929D3313000EEB16D /* Assets.xcassets */,
 				D6C23B5B29D3313000EEB16D /* Preview Content */,
-				FCD1FB1729DDAE3E007AF089 /* ActionButton.swift */,
 			);
 			path = ChickensGame;
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 		D6C23B6529D3313100EEB16D /* ChickensGameTests */ = {
 			isa = PBXGroup;
 			children = (
+				FCD1FB1A29E21AC0007AF089 /* Data */,
 				D6C23B6629D3313100EEB16D /* ChickensGameTests.swift */,
 			);
 			path = ChickensGameTests;
@@ -213,9 +217,43 @@
 		FCD1FB1629DC49F8007AF089 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				FCD1FB1729DDAE3E007AF089 /* ActionButton.swift */,
 				FCD1FB1429DC49F2007AF089 /* PrintOnlyInDebug.swift */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		FCD1FB1A29E21AC0007AF089 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				FCD1FB1F29E22B00007AF089 /* Actions */,
+				FCD1FB1E29E22AF6007AF089 /* Entites */,
+				FCD1FB1D29E22AEE007AF089 /* Logic */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		FCD1FB1D29E22AEE007AF089 /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Logic;
+			sourceTree = "<group>";
+		};
+		FCD1FB1E29E22AF6007AF089 /* Entites */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entites;
+			sourceTree = "<group>";
+		};
+		FCD1FB1F29E22B00007AF089 /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				FCD1FB2029E22B26007AF089 /* PlayerActionsGeneratorTests.swift */,
+				FCD1FB2229E23095007AF089 /* EntityActionsTests.swift */,
+			);
+			path = Actions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -374,6 +412,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCD1FB2329E23095007AF089 /* EntityActionsTests.swift in Sources */,
+				FCD1FB2129E22B26007AF089 /* PlayerActionsGeneratorTests.swift in Sources */,
 				D6C23B6729D3313100EEB16D /* ChickensGameTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
