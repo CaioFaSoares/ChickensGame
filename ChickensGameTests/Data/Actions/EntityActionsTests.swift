@@ -9,18 +9,21 @@ import XCTest
 @testable import ChickensGame
 
 final class EntityActionsTests: XCTestCase {
-    func testprocessActionInternalCooldown() {
-        // this function will work if a return is called in the function, eiter the result are false
-//        let testProcess = testprocessActionInternalCooldown()
-        //        XCTAssertTrue(testProcess)
+    func testProtocolPlayer(){
+        let testplayer = Player(10, 10)
 
+        XCTAssertEqual(testplayer.startingHP, 10)
+        XCTAssertEqual(testplayer.startingDP, 10)
 
-        let testFake = false
-        XCTAssertFalse(testFake)
+        XCTAssertEqual(testplayer.$currentScore, 0)
 
     }
-
-    func testHash(){
-        let testHash = hash(into: 1)
+    func testEntityProtocol(){
+        class testEntity: Entity,ObservableObject {
+            func updateCurrentDP(deltaDP: Int, isBuffing: Bool) {
+                <#code#>
+            }
+        }
     }
+
 }
