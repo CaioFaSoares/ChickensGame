@@ -16,7 +16,7 @@
 		D6BE222229D5CC590012FF38 /* EntityActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BE222129D5CC590012FF38 /* EntityActions.swift */; };
 		D6BE222429D5CC970012FF38 /* EnviromentalAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BE222329D5CC970012FF38 /* EnviromentalAction.swift */; };
 		D6BE222629D5D0830012FF38 /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BE222529D5D0830012FF38 /* MainMenuView.swift */; };
-		D6BE222929D6FE390012FF38 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BE222829D6FE390012FF38 /* GameManager.swift */; };
+		D6BE222929D6FE390012FF38 /* GameCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BE222829D6FE390012FF38 /* GameCoordinator.swift */; };
 		D6BE222E29D708410012FF38 /* CombatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BE222D29D708410012FF38 /* CombatManager.swift */; };
 		D6C23B5629D3312F00EEB16D /* ChickensGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C23B5529D3312F00EEB16D /* ChickensGameApp.swift */; };
 		D6C23B5829D3312F00EEB16D /* CombatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C23B5729D3312F00EEB16D /* CombatView.swift */; };
@@ -61,7 +61,7 @@
 		D6BE222129D5CC590012FF38 /* EntityActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityActions.swift; sourceTree = "<group>"; };
 		D6BE222329D5CC970012FF38 /* EnviromentalAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnviromentalAction.swift; sourceTree = "<group>"; };
 		D6BE222529D5D0830012FF38 /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
-		D6BE222829D6FE390012FF38 /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
+		D6BE222829D6FE390012FF38 /* GameCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCoordinator.swift; sourceTree = "<group>"; };
 		D6BE222D29D708410012FF38 /* CombatManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombatManager.swift; sourceTree = "<group>"; };
 		D6C23B5229D3312F00EEB16D /* ChickensGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChickensGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6C23B5529D3312F00EEB16D /* ChickensGameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChickensGameApp.swift; sourceTree = "<group>"; };
@@ -148,7 +148,7 @@
 		D6BE222A29D6FE420012FF38 /* Logic */ = {
 			isa = PBXGroup;
 			children = (
-				D6BE222829D6FE390012FF38 /* GameManager.swift */,
+				D6BE222829D6FE390012FF38 /* GameCoordinator.swift */,
 				D6BE222D29D708410012FF38 /* CombatManager.swift */,
 			);
 			path = Logic;
@@ -385,7 +385,7 @@
 				D6BE222429D5CC970012FF38 /* EnviromentalAction.swift in Sources */,
 				D659AFF229DC6C770094702E /* PlayerProtocol.swift in Sources */,
 				FCD1FB1529DC49F2007AF089 /* PrintOnlyInDebug.swift in Sources */,
-				D6BE222929D6FE390012FF38 /* GameManager.swift in Sources */,
+				D6BE222929D6FE390012FF38 /* GameCoordinator.swift in Sources */,
 				D659AFEF29DC6C140094702E /* CombatScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

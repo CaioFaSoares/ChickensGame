@@ -11,7 +11,7 @@ func casterEntityActingUponTargetEntity(
     action  inputAction: EntityAction,
     caster  casterEntity: (any Entity)?,
     target  targetEntity: any Entity,
-	gMan	gameManager: GameManager
+	gMan	gameCoordinator: GameCoordinator
 	
 ) -> Void {
     
@@ -26,7 +26,7 @@ func casterEntityActingUponTargetEntity(
     }
 	
 	inputAction.processActionInternalCooldown()
-	gameManager.endTurn()
+	gameCoordinator.endTurn()
 	
 }
 

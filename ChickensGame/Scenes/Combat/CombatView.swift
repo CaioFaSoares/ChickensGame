@@ -8,24 +8,17 @@
 import SwiftUI
 import SpriteKit
 
-protocol combatDelegate {
-	func returnAfterFightIsComplete()
-}
-
 struct CombatView: View {
     
-	init (player: (Int, Int), enemy: (Int, Int), delegate: combatDelegate) {
-        self.gameManager = GameManager(player: player, enemy: enemy)
+	init (player: (Int, Int), enemy: (Int, Int), delegate: any View) {
+        self.gameCoordinator = GameCoordinator(player: player, enemy: enemy)
 		self.gameScene = CombatScene(size: CGSize(width: UIScreen.main.bounds.width,
 												  height: UIScreen.main.bounds.height / 2))
 		self.gameScene.spawnEntities()
-		self.delegate = delegate
     }
-	
-	var delegate: combatDelegate
     
 	@ObservedObject var gameScene: CombatScene
-    @ObservedObject var gameManager: GameManager
+    @ObservedObject var gameCoordinator: GameCoordinator
 
     var body: some View {
         VStack{
@@ -33,13 +26,13 @@ struct CombatView: View {
 				Spacer()
 				VStack{
 					Spacer()
-					Text("\(gameManager.combatManager.currentTurn)")
+					Text("\(gameCoordinator.combatManager.currentTurn)")
 					Spacer()
 					HStack {
 						Spacer()
-						Text("Player HP: \(gameManager.player.currentHP)")
+						Text("Player HP: \(gameCoordinator.player.currentHP)")
 						Spacer()
-						Text("Enemy HP: \(gameManager.enemy.currentHP)")
+						Text("Enemy HP: \(gameCoordinator.enemy.currentHP)")
 						Spacer()
 					}
 					Spacer()
@@ -56,9 +49,9 @@ struct CombatView: View {
 					Spacer()
 					HStack {
 						Spacer()
-						ForEach(gameManager.player.activeActions, id: \.self) { action in
+						ForEach(gameCoordinator.player.activeActions, id: \.self) { action in
 							Button(action.contextualName) {
-								casterEntityActingUponTargetEntity(action: action, caster: gameManager.player, target: gameManager.enemy, gMan: gameManager)
+								casterEntityActingUponTargetEntity(action: action, caster: gameCoordinator.player, target: gameCoordinator.enemy, gMan: gameCoordinator)
 							}
 							Spacer()
 						}
@@ -73,14 +66,8 @@ struct CombatView: View {
     }
 }
 
-extension CombatView {
-	func returnAfterFightIsComplete() {
-		
-	}
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        CombatView(player: (12,2), enemy: (8,2))
-    }
-}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//		CombatView(player: (12,2), enemy: (8,2))
+//    }
+//}

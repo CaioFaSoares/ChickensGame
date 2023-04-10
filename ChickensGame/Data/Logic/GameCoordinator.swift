@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-class GameManager: ObservableObject {
+class GameCoordinator: ObservableObject {
     
     //Entities initialization
     @Published var player: Player
@@ -42,7 +42,7 @@ class GameManager: ObservableObject {
     }
 }
 
-extension GameManager {
+extension GameCoordinator {
 	
 	func endTurn() {
 		combatManager.processTurn()

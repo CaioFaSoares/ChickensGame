@@ -16,12 +16,10 @@ struct MainMenuView: View {
     @State var enemyDP = String("")
     
 	@State var showCombatView: Bool = false
-	
-	var combatDelegate = combatDelegate()
     
     var body: some View {
 		if showCombatView {
-			CombatView(player: (12,2), enemy: (8,2), delegate: combatDelegate)
+			CombatView(player: (12,2), enemy: (8,2), delegate: self)
 		} else {
 			VStack {
 				Text("Olá, mundo.")
@@ -43,6 +41,12 @@ struct MainMenuView: View {
 			}
 		}
     }
+}
+
+extension MainMenuView {
+	func returnToMenuTogglingCombatView() -> Void {
+		showCombatView = true
+	}
 }
 
 struct MainMenuView_Previews: PreviewProvider {
