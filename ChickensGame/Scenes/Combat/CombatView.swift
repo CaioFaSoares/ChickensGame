@@ -44,7 +44,6 @@ struct CombatView: View {
             SpriteView(scene: gameScene)
 				.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 2)
                 .ignoresSafeArea()
-<<<<<<< HEAD:ChickensGame/Scenes/Combat/CombatView.swift
 			ZStack{
 				VStack{
 					Spacer()
@@ -62,27 +61,6 @@ struct CombatView: View {
 				.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 4)
 				.ignoresSafeArea()
 			}
-=======
-            HStack {
-                Spacer()
-				Text("Player HP: \(gameManager.player.currentHP)")
-                Spacer()
-				Text("Enemy HP: \(gameManager.enemy.currentHP)")
-                Spacer()
-            }
-            Spacer()
-            HStack {
-                Spacer()
-                ForEach(gameManager.player.activeActions, id: \.self) { action in
-                    Button(action.contextualName) {
-						casterEntityActingUponTargetEntity(action: action, caster: gameManager.player, target: gameManager.enemy, gMan: gameManager)
-						gameScene.changeColorWhenAttacking()
-                    }.buttonStyle(ActionButton())
-                    Spacer()
-                }
-            }
-            Spacer()
->>>>>>> dev:ChickensGame/CombatView.swift
         }
 		.navigationBarBackButtonHidden(true)
     }
