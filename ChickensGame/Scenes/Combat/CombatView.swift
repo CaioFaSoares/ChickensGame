@@ -20,7 +20,7 @@ struct CombatView: View {
 	@ObservedObject var gameScene: CombatScene
     @ObservedObject var gameCoordinator: GameCoordinator
 	
-	@State var isShowingUpgrades: Bool
+	@State var isShowingUpgrades: Bool = false
     
 	var body: some View {
         VStack{
