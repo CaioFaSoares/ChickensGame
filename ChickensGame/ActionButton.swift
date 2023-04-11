@@ -15,6 +15,7 @@ struct ActionButton: ButtonStyle {
             .background(.brown)
 //            Image("backgroundname")
             .frame(alignment: .center)
+			.multilineTextAlignment(.center)
             .foregroundColor(.white)
             .clipShape(Capsule())
             .scaleEffect(configuration.isPressed ? 1.2 : 1)

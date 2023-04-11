@@ -30,8 +30,11 @@ class EntityAction: Action {
     let internalID: Int
     let internalName: String
     let contextualName: String
+	
+	//Type of Action
+	var typeOfAction: typeOfAttack
     
-    init(isHealing: Bool, value: Int, cooldown: Int, accuracy: Double, internalID: Int, internalName: String, contextualName: String) {
+	init(isHealing: Bool, value: Int, cooldown: Int, accuracy: Double, internalID: Int, internalName: String, contextualName: String, typeOfAction: typeOfAttack) {
         self.isHealing = isHealing
         self.value = value
         self.cooldown = cooldown
@@ -39,6 +42,7 @@ class EntityAction: Action {
         self.internalID = internalID
         self.internalName = internalName
         self.contextualName = contextualName
+		self.typeOfAction = typeOfAction
     }
 }
 
