@@ -16,11 +16,16 @@ class GameCoordinator: ObservableObject {
 	
 	@Published var combatManager = CombatManager()
 	
+	@Published var upgradeIsSelectable: Bool = false
+	@Published var selectableUpgrades: [EnviromentalAction] = []
+	
+	@Published var newestLog = ""
+	
 	var anyCancellable: AnyCancellable? = nil
     
-    init(player: (Int, Int), enemy: (Int, Int)) {
-        self.player = Player(player.0, player.1)
-        self.enemy = Enemy(enemy.0, enemy.1)
+    init() {
+        self.player = Player(12,2)
+        self.enemy = Enemy(8,0)
 		
 		let atk1 = PlayerAttackGenerator().generateBasicAttack()
 		let atk2 = PlayerAttackGenerator().generateStrongAttack()
@@ -48,7 +53,25 @@ extension GameCoordinator {
 	
 	func endTurn() {
 		combatManager.processTurn()
+		if !player.isAlive {
+			endCombatPlayerLost()
+		} else if !enemy.isAlive {
+			endCombatPlayerWon()
+		}
 		checkIfItsEnemyTurn()
+	}
+	
+	func endCombatPlayerWon() {
+		upgradeIsSelectable = true
+		
+	}
+	
+	func generateUpgradePaths() {
+		
+	}
+	
+	func endCombatPlayerLost() {
+		print("player lost")
 	}
 	
 	func checkIfItsEnemyTurn() {

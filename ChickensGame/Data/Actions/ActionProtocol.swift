@@ -7,5 +7,10 @@
 
 import Foundation
 
-protocol Action: ObservableObject {}
+protocol Action: ObservableObject {
+	
+	//Type of Action
+	var typeOfAction: typeOfAttack { get set }
+	
+}
 

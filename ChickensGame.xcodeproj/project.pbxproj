@@ -31,6 +31,7 @@
 		D6C23B8729D3338E00EEB16D /* ActionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C23B8329D3338E00EEB16D /* ActionProtocol.swift */; };
 		D6C23B8B29D34F1600EEB16D /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D6C23B8A29D34F1600EEB16D /* .gitignore */; };
 		D6C23B8D29D3501A00EEB16D /* .gitattributes in Resources */ = {isa = PBXBuildFile; fileRef = D6C23B8C29D3501A00EEB16D /* .gitattributes */; };
+		D6CEBE4F29E44F640071D2B1 /* TypesOfAttack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CEBE4E29E44F640071D2B1 /* TypesOfAttack.swift */; };
 		FCD1FB1529DC49F2007AF089 /* PrintOnlyInDebug.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD1FB1429DC49F2007AF089 /* PrintOnlyInDebug.swift */; };
 		FCD1FB1829DDAE3E007AF089 /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD1FB1729DDAE3E007AF089 /* ActionButton.swift */; };
 /* End PBXBuildFile section */
@@ -80,6 +81,7 @@
 		D6C23B8329D3338E00EEB16D /* ActionProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionProtocol.swift; sourceTree = "<group>"; };
 		D6C23B8A29D34F1600EEB16D /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		D6C23B8C29D3501A00EEB16D /* .gitattributes */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitattributes; sourceTree = "<group>"; };
+		D6CEBE4E29E44F640071D2B1 /* TypesOfAttack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypesOfAttack.swift; sourceTree = "<group>"; };
 		FCD1FB1429DC49F2007AF089 /* PrintOnlyInDebug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintOnlyInDebug.swift; sourceTree = "<group>"; };
 		FCD1FB1729DDAE3E007AF089 /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -109,9 +111,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D634AD7A29E58143009690A8 /* MenuStory */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MenuStory;
+			sourceTree = "<group>";
+		};
 		D659AFEC29DC6BF30094702E /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				D634AD7A29E58143009690A8 /* MenuStory */,
 				D659AFED29DC6BF30094702E /* Combat */,
 			);
 			path = Scenes;
@@ -221,6 +231,7 @@
 		D6C23B7F29D3338E00EEB16D /* Actions */ = {
 			isa = PBXGroup;
 			children = (
+				D6CEBE4E29E44F640071D2B1 /* TypesOfAttack.swift */,
 				D6C23B8329D3338E00EEB16D /* ActionProtocol.swift */,
 				D6BE222129D5CC590012FF38 /* EntityActions.swift */,
 				D6C23B8129D3338E00EEB16D /* PlayerActionsGenerator.swift */,
@@ -372,6 +383,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6CEBE4F29E44F640071D2B1 /* TypesOfAttack.swift in Sources */,
 				D6C23B8529D3338E00EEB16D /* PlayerActionsGenerator.swift in Sources */,
 				D6BE222029D5B4A80012FF38 /* EnemyEntity.swift in Sources */,
 				D6BE222229D5CC590012FF38 /* EntityActions.swift in Sources */,
