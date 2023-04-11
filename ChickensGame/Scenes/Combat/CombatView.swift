@@ -28,7 +28,6 @@ struct CombatView: View {
 				CombatStatTracker(gameCoordinator: gameCoordinator)
 			}
 			ZStack {
-				
 				CombatSceneView(gameCoordinator: gameCoordinator, gameScene: gameScene)
 			}
 			ZStack{
