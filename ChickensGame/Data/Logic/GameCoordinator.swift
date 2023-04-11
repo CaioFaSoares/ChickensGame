@@ -24,8 +24,8 @@ class GameCoordinator: ObservableObject {
 	var anyCancellable: AnyCancellable? = nil
     
     init() {
-        self.player = Player(12,2)
-        self.enemy = Enemy(8,0)
+        self.player = Player(100,0)
+        self.enemy = Enemy(100,0)
 		
 		let atk1 = PlayerAttackGenerator().generateBasicAttack()
 		let atk2 = PlayerAttackGenerator().generateStrongAttack()
@@ -43,7 +43,6 @@ class GameCoordinator: ObservableObject {
 		
 		anyCancellable = self.player.objectWillChange.sink { [weak self] (_) in self?.objectWillChange.send() }
 		anyCancellable = self.enemy.objectWillChange.sink { [weak self] (_) in self?.objectWillChange.send() }
-
 		
 		print("Game manager has been initialized")
     }
@@ -52,13 +51,32 @@ class GameCoordinator: ObservableObject {
 extension GameCoordinator {
 	
 	func endTurn() {
-		combatManager.processTurn()
+		
+		combatManager.incrementTurnCounterAndToggleEnemyState()
+		
 		if !player.isAlive {
 			endCombatPlayerLost()
 		} else if !enemy.isAlive {
 			endCombatPlayerWon()
 		}
+		
 		checkIfItsEnemyTurn()
+		runCooldownDecrementorOnAllEnemyActiveActions()
+		
+	}
+	
+	func runCooldownDecrementorOnAllPlayerActiveActions() {
+		for act in player.activeActions where !act.isOffCooldown {
+			act.processActionInternalCooldown()
+			print("\(act.internalName) + \(act.isOffCooldown) + \(act.turnsLeftUntilIsOffCooldown)")
+		}
+	}
+	
+	func runCooldownDecrementorOnAllEnemyActiveActions() {
+		for act in enemy.activeActions where !act.isOffCooldown {
+			act.processActionInternalCooldown()
+			print("\(act.internalName) + \(act.isOffCooldown) + \(act.turnsLeftUntilIsOffCooldown)")
+		}
 	}
 	
 	func endCombatPlayerWon() {
@@ -84,6 +102,7 @@ extension GameCoordinator {
 		let validActions = enemy.activeActions.filter { $0.isOffCooldown }
 		let rolledForAction = combatManager.enemyTurnDiceRoller(validActions)
 		casterEntityActingUponTargetEntity(action: rolledForAction, caster: enemy, target: player, gMan: self)
+		runCooldownDecrementorOnAllPlayerActiveActions()
 	}
 	
 }

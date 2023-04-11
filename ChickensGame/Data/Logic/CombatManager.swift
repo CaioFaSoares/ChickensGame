@@ -12,10 +12,9 @@ class CombatManager: ObservableObject {
     @Published var currentTurn = 0
     @Published var isEnemyTurn = false
 	
-	func processTurn() {
+	func incrementTurnCounterAndToggleEnemyState() {
 		currentTurn += 1
 		isEnemyTurn.toggle()
-		print(isEnemyTurn)
 	}
 	
 	func enemyTurnDiceRoller(_ enemyAtks: [EntityAction]) -> EntityAction {

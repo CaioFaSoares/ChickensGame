@@ -21,3 +21,18 @@ struct ActionButton: ButtonStyle {
             .scaleEffect(configuration.isPressed ? 1.2 : 1)
     }
 }
+
+struct ActionButtonInactive: ButtonStyle {
+	func makeBody(configuration: Configuration) -> some View {
+		configuration.label
+			.padding()
+			.background(.gray)
+			.disabled(true)
+//            Image("backgroundname")
+			.frame(alignment: .center)
+			.multilineTextAlignment(.center)
+			.foregroundColor(.white)
+			.clipShape(Capsule())
+			.scaleEffect(configuration.isPressed ? 1.2 : 1)
+	}
+}

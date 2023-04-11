@@ -14,18 +14,26 @@ class EnviromentalAction: Action {
         return UUID().uuidString
     }
 	
-	var typeOfAction: typeOfAttack
+	//Depending on actionCategory, some of these values may be used
+	var value: Int
+	var statName: String?
+	var internalActionName: String?
+	
     
     //Contextual information about the Action
     let internalID: Int
     let internalName: String
     let contextualName: String
+	var typeOfAction: actionCategory
     
-	init(internalID: Int, internalName: String, contextualName: String, typeOfAction: typeOfAttack) {
+	init(internalID: Int, internalName: String, contextualName: String, typeOfAction: actionCategory, value: Int, statName: String, internalActionName: String?) {
         self.internalID = internalID
         self.internalName = internalName
         self.contextualName = contextualName
 		self.typeOfAction = typeOfAction
+		self.value = value
+		self.statName = statName
+		self.internalActionName = internalActionName
     }
     
 }

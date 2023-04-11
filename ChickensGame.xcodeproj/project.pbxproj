@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		D622DCD729DB6E3A00233269 /* Sleep.swift in Sources */ = {isa = PBXBuildFile; fileRef = D622DCD629DB6E3A00233269 /* Sleep.swift */; };
+		D634AD7E29E58D89009690A8 /* EnviromentalActionGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D634AD7D29E58D89009690A8 /* EnviromentalActionGenerator.swift */; };
+		D634AD8129E5A444009690A8 /* actionProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D634AD8029E5A444009690A8 /* actionProcessor.swift */; };
+		D634AD8329E5A461009690A8 /* casterVentity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D634AD8229E5A461009690A8 /* casterVentity.swift */; };
+		D634AD8529E5A48C009690A8 /* casterVcaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = D634AD8429E5A48C009690A8 /* casterVcaster.swift */; };
+		D634AD8729E5A4A2009690A8 /* envActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D634AD8629E5A4A2009690A8 /* envActions.swift */; };
 		D659AFEF29DC6C140094702E /* CombatScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D659AFEE29DC6C140094702E /* CombatScene.swift */; };
 		D659AFF229DC6C770094702E /* PlayerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D659AFF129DC6C770094702E /* PlayerProtocol.swift */; };
 		D6BE221C29D5B44F0012FF38 /* EntityProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BE221B29D5B44F0012FF38 /* EntityProtocol.swift */; };
@@ -27,7 +32,6 @@
 		D6C23B7329D3313100EEB16D /* ChickensGameUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C23B7229D3313100EEB16D /* ChickensGameUITestsLaunchTests.swift */; };
 		D6C23B8429D3338E00EEB16D /* EnemyActionsGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C23B8029D3338E00EEB16D /* EnemyActionsGenerator.swift */; };
 		D6C23B8529D3338E00EEB16D /* PlayerActionsGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C23B8129D3338E00EEB16D /* PlayerActionsGenerator.swift */; };
-		D6C23B8629D3338E00EEB16D /* runAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C23B8229D3338E00EEB16D /* runAction.swift */; };
 		D6C23B8729D3338E00EEB16D /* ActionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C23B8329D3338E00EEB16D /* ActionProtocol.swift */; };
 		D6C23B8B29D34F1600EEB16D /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D6C23B8A29D34F1600EEB16D /* .gitignore */; };
 		D6C23B8D29D3501A00EEB16D /* .gitattributes in Resources */ = {isa = PBXBuildFile; fileRef = D6C23B8C29D3501A00EEB16D /* .gitattributes */; };
@@ -56,6 +60,11 @@
 
 /* Begin PBXFileReference section */
 		D622DCD629DB6E3A00233269 /* Sleep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sleep.swift; sourceTree = "<group>"; };
+		D634AD7D29E58D89009690A8 /* EnviromentalActionGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnviromentalActionGenerator.swift; sourceTree = "<group>"; };
+		D634AD8029E5A444009690A8 /* actionProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = actionProcessor.swift; sourceTree = "<group>"; };
+		D634AD8229E5A461009690A8 /* casterVentity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = casterVentity.swift; sourceTree = "<group>"; };
+		D634AD8429E5A48C009690A8 /* casterVcaster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = casterVcaster.swift; sourceTree = "<group>"; };
+		D634AD8629E5A4A2009690A8 /* envActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = envActions.swift; sourceTree = "<group>"; };
 		D659AFEE29DC6C140094702E /* CombatScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombatScene.swift; sourceTree = "<group>"; };
 		D659AFF129DC6C770094702E /* PlayerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerProtocol.swift; sourceTree = "<group>"; };
 		D6BE221B29D5B44F0012FF38 /* EntityProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityProtocol.swift; sourceTree = "<group>"; };
@@ -78,7 +87,6 @@
 		D6C23B7229D3313100EEB16D /* ChickensGameUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChickensGameUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D6C23B8029D3338E00EEB16D /* EnemyActionsGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnemyActionsGenerator.swift; sourceTree = "<group>"; };
 		D6C23B8129D3338E00EEB16D /* PlayerActionsGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerActionsGenerator.swift; sourceTree = "<group>"; };
-		D6C23B8229D3338E00EEB16D /* runAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = runAction.swift; sourceTree = "<group>"; };
 		D6C23B8329D3338E00EEB16D /* ActionProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionProtocol.swift; sourceTree = "<group>"; };
 		D6C23B8A29D34F1600EEB16D /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		D6C23B8C29D3501A00EEB16D /* .gitattributes */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitattributes; sourceTree = "<group>"; };
@@ -118,6 +126,17 @@
 			children = (
 			);
 			path = MenuStory;
+			sourceTree = "<group>";
+		};
+		D634AD7F29E5A438009690A8 /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				D634AD8029E5A444009690A8 /* actionProcessor.swift */,
+				D634AD8229E5A461009690A8 /* casterVentity.swift */,
+				D634AD8429E5A48C009690A8 /* casterVcaster.swift */,
+				D634AD8629E5A4A2009690A8 /* envActions.swift */,
+			);
+			path = Actions;
 			sourceTree = "<group>";
 		};
 		D659AFEC29DC6BF30094702E /* Scenes */ = {
@@ -234,13 +253,14 @@
 		D6C23B7F29D3338E00EEB16D /* Actions */ = {
 			isa = PBXGroup;
 			children = (
+				D634AD7F29E5A438009690A8 /* Actions */,
 				D6CEBE4E29E44F640071D2B1 /* TypesOfAttack.swift */,
 				D6C23B8329D3338E00EEB16D /* ActionProtocol.swift */,
 				D6BE222129D5CC590012FF38 /* EntityActions.swift */,
 				D6C23B8129D3338E00EEB16D /* PlayerActionsGenerator.swift */,
 				D6C23B8029D3338E00EEB16D /* EnemyActionsGenerator.swift */,
 				D6BE222329D5CC970012FF38 /* EnviromentalAction.swift */,
-				D6C23B8229D3338E00EEB16D /* runAction.swift */,
+				D634AD7D29E58D89009690A8 /* EnviromentalActionGenerator.swift */,
 			);
 			path = Actions;
 			sourceTree = "<group>";
@@ -387,18 +407,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				D6CEBE4F29E44F640071D2B1 /* TypesOfAttack.swift in Sources */,
+				D634AD8729E5A4A2009690A8 /* envActions.swift in Sources */,
 				D6C23B8529D3338E00EEB16D /* PlayerActionsGenerator.swift in Sources */,
+				D634AD8129E5A444009690A8 /* actionProcessor.swift in Sources */,
 				D6BE222029D5B4A80012FF38 /* EnemyEntity.swift in Sources */,
 				D6BE222229D5CC590012FF38 /* EntityActions.swift in Sources */,
 				D6C23B8429D3338E00EEB16D /* EnemyActionsGenerator.swift in Sources */,
 				D6C23B5829D3312F00EEB16D /* CombatView.swift in Sources */,
 				D622DCD729DB6E3A00233269 /* Sleep.swift in Sources */,
+				D634AD8529E5A48C009690A8 /* casterVcaster.swift in Sources */,
+				D634AD7E29E58D89009690A8 /* EnviromentalActionGenerator.swift in Sources */,
 				FCD1FB2529E6F0A4007AF089 /* CombatAnimations.swift in Sources */,
 				D6C23B8729D3338E00EEB16D /* ActionProtocol.swift in Sources */,
 				FCD1FB1829DDAE3E007AF089 /* ActionButton.swift in Sources */,
 				D6BE222E29D708410012FF38 /* CombatManager.swift in Sources */,
 				D6BE222629D5D0830012FF38 /* MainMenuView.swift in Sources */,
-				D6C23B8629D3338E00EEB16D /* runAction.swift in Sources */,
 				D6C23B5629D3312F00EEB16D /* ChickensGameApp.swift in Sources */,
 				D6BE221E29D5B46E0012FF38 /* PlayerEntity.swift in Sources */,
 				D6BE221C29D5B44F0012FF38 /* EntityProtocol.swift in Sources */,
@@ -406,6 +429,7 @@
 				D659AFF229DC6C770094702E /* PlayerProtocol.swift in Sources */,
 				FCD1FB1529DC49F2007AF089 /* PrintOnlyInDebug.swift in Sources */,
 				D6BE222929D6FE390012FF38 /* GameCoordinator.swift in Sources */,
+				D634AD8329E5A461009690A8 /* casterVentity.swift in Sources */,
 				D659AFEF29DC6C140094702E /* CombatScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

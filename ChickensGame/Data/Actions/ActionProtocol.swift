@@ -10,7 +10,7 @@ import Foundation
 protocol Action: ObservableObject {
 	
 	//Type of Action
-	var typeOfAction: typeOfAttack { get set }
+	var typeOfAction: actionCategory { get set }
 	
 }
 

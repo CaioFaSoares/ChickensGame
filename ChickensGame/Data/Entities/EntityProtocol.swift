@@ -25,27 +25,19 @@ protocol Entity: ObservableObject {
     
     //Update internal stat funcs
     func updateCurrentHP(deltaHP: Int, isHealing: Bool)
+	func updateMaxHP(deltaMaxHP: Int)
     func updateCurrentDP(deltaDP: Int, isBuffing: Bool)
-    
-    //Action processing
-    func identifyAction(action: any Action)
-    func processAction(action: any Action)
     
 }
 
 extension Entity {
     
-    func identifyAction(action: any Action) {
-        //
-    }
-    
-    func processAction(action: any Action) {
-        //
-    }
-    
     func updateCurrentHP(deltaHP: Int, isHealing: Bool) {
         if isHealing {
             currentHP += deltaHP
+			if currentHP > maxHP {
+				currentHP = maxHP
+			}
         } else {
             let composition = deltaHP - currentDP
             currentHP -= composition
@@ -55,6 +47,10 @@ extension Entity {
             }
         }
     }
+	
+	func updateMaxHP(deltaMaxHP: Int) {
+		maxHP += deltaMaxHP
+	}
     
     func updateCurrentDP(deltaDP: Int, isBuffing: Bool) {
         if isBuffing {

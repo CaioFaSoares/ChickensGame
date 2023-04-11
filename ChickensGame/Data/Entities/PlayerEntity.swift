@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 class Player: PlayerProtocol {
     
@@ -49,6 +50,7 @@ class Player: PlayerProtocol {
         self.currentDP = startingDP
         
         self.currentScore = 0
+		
     }
     
 }

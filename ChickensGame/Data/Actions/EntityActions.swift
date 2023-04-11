@@ -32,9 +32,10 @@ class EntityAction: Action {
     let contextualName: String
 	
 	//Type of Action
-	var typeOfAction: typeOfAttack
+	var typeOfAction: actionCategory
+	
     
-	init(isHealing: Bool, value: Int, cooldown: Int, accuracy: Double, internalID: Int, internalName: String, contextualName: String, typeOfAction: typeOfAttack) {
+	init(isHealing: Bool, value: Int, cooldown: Int, accuracy: Double, internalID: Int, internalName: String, contextualName: String, typeOfAction: actionCategory) {
         self.isHealing = isHealing
         self.value = value
         self.cooldown = cooldown
@@ -58,9 +59,17 @@ extension EntityAction: Identifiable, Hashable {
 
 extension EntityAction {
 	func processActionInternalCooldown() {
-		turnsLeftUntilIsOffCooldown = cooldown
 		if turnsLeftUntilIsOffCooldown == 0 {
 			isOffCooldown = true
-		} else { isOffCooldown = false }
+		} else {
+			isOffCooldown = false
+			turnsLeftUntilIsOffCooldown -= 1
+		}
 	}
+	
+	func actionsHasBeenCasted() {
+		turnsLeftUntilIsOffCooldown = cooldown
+		isOffCooldown = false
+	}
+	
 }

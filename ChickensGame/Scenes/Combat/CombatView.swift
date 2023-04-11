@@ -21,6 +21,7 @@ struct CombatView: View {
     @ObservedObject var gameCoordinator: GameCoordinator
 	
 	@State var isShowingUpgrades: Bool = false
+	@State var playerIsDedThisIsNotATypo: Bool = false
     
 	var body: some View {
         VStack{
@@ -50,9 +51,9 @@ struct CombatStatTracker: View {
 			Spacer()
 			HStack {
 				Spacer()
-				Text("Player HP: \(gameCoordinator.player.currentHP)")
+				Text("Player HP: \(gameCoordinator.player.currentHP) / \(gameCoordinator.player.maxHP)")
 				Spacer()
-				Text("Enemy HP: \(gameCoordinator.enemy.currentHP)")
+				Text("Enemy HP: \(gameCoordinator.enemy.currentHP) / \(gameCoordinator.enemy.maxHP)")
 				Spacer()
 			}
 			Spacer()
@@ -74,7 +75,7 @@ struct CombatSceneView: View {
 			.ignoresSafeArea()
 		VStack {
 			Text("\(gameCoordinator.newestLog)")
-				.padding(.all)
+				.padding(.top)
 			Spacer()
 		}
 	}
@@ -91,10 +92,7 @@ struct CombatActionView: View {
 			HStack {
 				Spacer()
 				ForEach(gameCoordinator.player.activeActions, id: \.self) { action in
-					Button(action.contextualName) {
-						processButtonPress(action: action, caster: gameCoordinator.player, target: gameCoordinator.enemy, gMan: gameCoordinator)
-					}.buttonStyle(ActionButton())
-					Spacer()
+					CombatButton(gameCoordinator: gameCoordinator, action: action)
 				}
 			}
 			Spacer()
@@ -104,4 +102,21 @@ struct CombatActionView: View {
 	}
 }
 
+struct CombatButton: View {
+	
+	@ObservedObject var gameCoordinator: GameCoordinator
+	var action: EntityAction
+	
+	var body: some View {
+		if action.isOffCooldown {
+			Button(action.contextualName){
+				processButtonPress(action: action, caster: gameCoordinator.player, target: gameCoordinator.enemy, gMan: gameCoordinator)
+			}.buttonStyle(ActionButton())
+		} else {
+			Button(action.contextualName){}.buttonStyle(ActionButtonInactive())
+		}
+		Spacer()
+	}
+	
+}
 

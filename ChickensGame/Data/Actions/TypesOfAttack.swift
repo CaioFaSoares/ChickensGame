@@ -7,7 +7,9 @@
 
 import Foundation
 
-enum typeOfAttack {
-	case targetsAnotherEntity
-	case targetsOwnCaster
+enum actionCategory {
+	case entity_targetingAnotherEntity
+	case entity_targetingItself
+	case enviromental_targetingPlayerStat
+	case enviromental_targetingPlayerAction
 }

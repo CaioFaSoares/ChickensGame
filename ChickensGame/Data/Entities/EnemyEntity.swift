@@ -9,7 +9,6 @@ import Foundation
 
 class Enemy: Entity {
     
-    
     //Identifiables
     var identifier: String {
         return UUID().uuidString
