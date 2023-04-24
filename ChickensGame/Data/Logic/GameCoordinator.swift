@@ -84,12 +84,15 @@ extension GameCoordinator {
 	
 	func endCombatPlayerWon() {
 		gameState = .combatHasBeenWon
-		generateUpgradePaths()
+		if selectableUpgrades.isEmpty { generateUpgradePaths() }
 	}
 	
 	func generateUpgradePaths() {
-		selectableUpgrades.append(EnviromentalActionGenerator().generateFullHeal())
-		selectableUpgrades.append(EnviromentalActionGenerator().generateUpgradeToBasicAttack())
+		let upg1 = EnviromentalActionGenerator().generateFullHeal()
+		let upg2 = EnviromentalActionGenerator().generateUpgradeToBasicAttack()
+		
+		selectableUpgrades.append(upg1)
+		selectableUpgrades.append(upg2)
 	}
 	
 	func endCombatPlayerLost() {

@@ -64,6 +64,7 @@
 		D601CE1329E6DA95000FE9F3 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
 		D601CE1629E6E8CF000FE9F3 /* CombatButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombatButton.swift; sourceTree = "<group>"; };
 		D622DCD629DB6E3A00233269 /* Sleep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sleep.swift; sourceTree = "<group>"; };
+		D632781229F6C6CE0052E0AA /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 		D634AD7D29E58D89009690A8 /* EnviromentalActionGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnviromentalActionGenerator.swift; sourceTree = "<group>"; };
 		D634AD8029E5A444009690A8 /* actionProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = actionProcessor.swift; sourceTree = "<group>"; };
 		D634AD8229E5A461009690A8 /* casterVentity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = casterVentity.swift; sourceTree = "<group>"; };
@@ -131,6 +132,14 @@
 				D601CE1629E6E8CF000FE9F3 /* CombatButton.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		D632781129F6C6CE0052E0AA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D632781229F6C6CE0052E0AA /* SpriteKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		D634AD7A29E58143009690A8 /* MenuStory */ = {
@@ -211,6 +220,7 @@
 				D6C23B6529D3313100EEB16D /* ChickensGameTests */,
 				D6C23B6F29D3313100EEB16D /* ChickensGameUITests */,
 				D6C23B5329D3312F00EEB16D /* Products */,
+				D632781129F6C6CE0052E0AA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};

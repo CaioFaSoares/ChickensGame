@@ -86,15 +86,10 @@ struct CombatView: View {
 							Group {
 								ForEach(gameCoordinator.selectableUpgrades, id: \.self) { action in
 									Button(action.contextualName) {
-										processButtonPress(action: action, caster: nil, target: nil, gMan: gameCoordinator)
-									}
+										processButtonPress(action: action, caster: gameCoordinator.player, target: nil, gMan: gameCoordinator)
+									}	.padding(.all)
+										.buttonStyle(.bordered)
 								}
-//								Button(gameCoordinator.selectableUpgrades[0].contextualName) {
-//
-//								}.padding(.all).buttonStyle(.bordered)
-//								Button(gameCoordinator.selectableUpgrades[1].contextualName) {
-//
-//								}.padding(.all).buttonStyle(.bordered)
 							}
 						}
 					}

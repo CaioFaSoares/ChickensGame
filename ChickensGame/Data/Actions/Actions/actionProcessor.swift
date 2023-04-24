@@ -9,21 +9,24 @@ import Foundation
 
 func processButtonPress(
 	action  inputAction: any Action,
-	caster  casterEntity: (any Entity)?,
+	caster  casterEntity: any Entity,
 	target  targetEntity: (any Entity)?,
 	gMan	gameCoordinator: GameCoordinator
 ) -> Void {
 	guard let isInputActionEntityAction = inputAction as? EntityAction else { return }
+	guard let validatedEnemy = targetEntity else { return }
+	
 	if !isInputActionEntityAction.isOffCooldown {
-		print("you shouldn't be able to cast \(isInputActionEntityAction.internalName). \(casterEntity.currentHP) \(targetEntity.currentHP)")
+		print("you shouldn't be able to cast \(isInputActionEntityAction.internalName). \(casterEntity.currentHP) \(validatedEnemy.currentHP)")
 	}
+	
 	
 	gameCoordinator.newestLog = ""
 	
 	switch inputAction.typeOfAction {
 		case .entity_targetingAnotherEntity:
 			casterEntityActingUponTargetEntity(action: inputAction as! EntityAction,
-											   caster: casterEntity, target: targetEntity, gMan: gameCoordinator)
+											   caster: casterEntity, target: validatedEnemy, gMan: gameCoordinator)
 		case .entity_targetingItself:
 			entityActingUponItself(action: inputAction as! EntityAction,
 								   caster: casterEntity, gMan: gameCoordinator)
