@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import SwiftUI
 
 class GameCoordinator: ObservableObject {
     
@@ -16,19 +17,21 @@ class GameCoordinator: ObservableObject {
 	
 	@Published var combatManager = CombatManager()
 	
-	@Published var upgradeIsSelectable: Bool = false
+	@Published var gameState: GameState = .combatIsOngoing
 	@Published var selectableUpgrades: [EnviromentalAction] = []
 	
 	@Published var newestLog = ""
 	
+	@Published var currentCombatView: GameCoordinator?
+	
 	var anyCancellable: AnyCancellable? = nil
     
-    init() {
+	init(view: CombatView? = nil) {
         self.player = Player(100,0)
         self.enemy = Enemy(100,0)
 		
 		let atk1 = PlayerAttackGenerator().generateBasicAttack()
-		let atk2 = PlayerAttackGenerator().generateStrongAttack()
+		let atk2 = PlayerAttackGenerator().generateGodAttack()
         let atk3 = PlayerAttackGenerator().generateSkillHealing()
 		
 		self.player.activeActions.append(atk1)
@@ -80,16 +83,17 @@ extension GameCoordinator {
 	}
 	
 	func endCombatPlayerWon() {
-		upgradeIsSelectable = true
-		
+		gameState = .combatHasBeenWon
+		generateUpgradePaths()
 	}
 	
 	func generateUpgradePaths() {
-		
+		selectableUpgrades.append(EnviromentalActionGenerator().generateFullHeal())
+		selectableUpgrades.append(EnviromentalActionGenerator().generateUpgradeToBasicAttack())
 	}
 	
 	func endCombatPlayerLost() {
-		print("player lost")
+		gameState = .combatHasBeenLost
 	}
 	
 	func checkIfItsEnemyTurn() {

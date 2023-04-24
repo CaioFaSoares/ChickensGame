@@ -9,8 +9,8 @@ import Foundation
 
 func processButtonPress(
 	action  inputAction: any Action,
-	caster  casterEntity: any Entity,
-	target  targetEntity: any Entity,
+	caster  casterEntity: (any Entity)?,
+	target  targetEntity: (any Entity)?,
 	gMan	gameCoordinator: GameCoordinator
 ) -> Void {
 	guard let isInputActionEntityAction = inputAction as? EntityAction else { return }

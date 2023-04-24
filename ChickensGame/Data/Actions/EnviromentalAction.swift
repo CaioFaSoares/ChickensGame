@@ -16,8 +16,11 @@ class EnviromentalAction: Action {
 	
 	//Depending on actionCategory, some of these values may be used
 	var value: Int
-	var statName: String?
 	var internalActionName: String?
+	
+	//Depending on actionCategory, it may be one of these or the other
+	var targetStat: String?
+	var targetAction: String?
 	
     
     //Contextual information about the Action
@@ -26,13 +29,14 @@ class EnviromentalAction: Action {
     let contextualName: String
 	var typeOfAction: actionCategory
     
-	init(internalID: Int, internalName: String, contextualName: String, typeOfAction: actionCategory, value: Int, statName: String, internalActionName: String?) {
+	init(internalID: Int, internalName: String, contextualName: String, typeOfAction: actionCategory, value: Int, targetStat: String?, targetAction: String?, internalActionName: String?) {
         self.internalID = internalID
         self.internalName = internalName
         self.contextualName = contextualName
 		self.typeOfAction = typeOfAction
 		self.value = value
-		self.statName = statName
+		self.targetStat = targetStat
+		self.targetAction = targetAction
 		self.internalActionName = internalActionName
     }
     

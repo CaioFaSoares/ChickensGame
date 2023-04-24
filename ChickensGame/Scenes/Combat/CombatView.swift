@@ -11,6 +11,7 @@ import SpriteKit
 struct CombatView: View {
     
 	init (coordinator: GameCoordinator) {
+		
         self.gameCoordinator = coordinator
 		self.gameScene = CombatScene(size: CGSize(width: UIScreen.main.bounds.width,
 												  height: UIScreen.main.bounds.height / 2))
@@ -19,20 +20,86 @@ struct CombatView: View {
 	
 	@ObservedObject var gameScene: CombatScene
     @ObservedObject var gameCoordinator: GameCoordinator
-	
-	@State var isShowingUpgrades: Bool = false
-	@State var playerIsDedThisIsNotATypo: Bool = false
     
 	var body: some View {
         VStack{
-			ZStack {
-				CombatStatTracker(gameCoordinator: gameCoordinator)
-			}
-			ZStack {
-				CombatSceneView(gameCoordinator: gameCoordinator, gameScene: gameScene)
-			}
-			ZStack{
-				CombatActionView(gameCoordinator: gameCoordinator)
+			switch gameCoordinator.gameState {
+			case .combatIsOngoing:
+				ZStack {
+					CombatStatTracker(gameCoordinator: gameCoordinator)
+				}
+				.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 4)
+				ZStack {
+					CombatSceneView(gameCoordinator: gameCoordinator, gameScene: gameScene)
+				}
+				.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 2)
+				ZStack{
+					CombatActionView(gameCoordinator: gameCoordinator)
+				}
+				.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 4)
+			case .combatHasBeenLost:
+				ZStack {
+					VStack {
+						ZStack {
+							CombatStatTracker(gameCoordinator: gameCoordinator)
+						}
+						.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 4)
+						ZStack {
+							CombatSceneView(gameCoordinator: gameCoordinator, gameScene: gameScene)
+						}
+						.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 2)
+						ZStack{
+							CombatActionView(gameCoordinator: gameCoordinator)
+						}
+						.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 4)
+					}
+					ZStack {
+						Color(.black)
+							.opacity(0.75)
+							.ignoresSafeArea()
+					}
+				}
+			case .combatHasBeenWon:
+				ZStack {
+					VStack {
+						ZStack {
+							CombatStatTracker(gameCoordinator: gameCoordinator)
+						}
+						.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 4)
+						ZStack {
+							CombatSceneView(gameCoordinator: gameCoordinator, gameScene: gameScene)
+						}
+						.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 2)
+						ZStack{
+							CombatActionView(gameCoordinator: gameCoordinator)
+						}
+						.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 4)
+					}
+					ZStack {
+						Color(.blue)
+							.opacity(0.75)
+							.ignoresSafeArea()
+						VStack{
+							Text("You've won!")
+								.font(.title)
+								.padding(.all)
+							Group {
+								ForEach(gameCoordinator.selectableUpgrades, id: \.self) { action in
+									Button(action.contextualName) {
+										processButtonPress(action: action, caster: nil, target: nil, gMan: gameCoordinator)
+									}
+								}
+//								Button(gameCoordinator.selectableUpgrades[0].contextualName) {
+//
+//								}.padding(.all).buttonStyle(.bordered)
+//								Button(gameCoordinator.selectableUpgrades[1].contextualName) {
+//
+//								}.padding(.all).buttonStyle(.bordered)
+							}
+						}
+					}
+					
+				}
 			}
         }
 		.navigationBarBackButtonHidden(true)
@@ -58,9 +125,6 @@ struct CombatStatTracker: View {
 			}
 			Spacer()
 		}
-		Spacer()
-		.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 4)
-		.ignoresSafeArea()
 	}
 }
 
@@ -101,22 +165,3 @@ struct CombatActionView: View {
 		.ignoresSafeArea()
 	}
 }
-
-struct CombatButton: View {
-	
-	@ObservedObject var gameCoordinator: GameCoordinator
-	var action: EntityAction
-	
-	var body: some View {
-		if action.isOffCooldown {
-			Button(action.contextualName){
-				processButtonPress(action: action, caster: gameCoordinator.player, target: gameCoordinator.enemy, gMan: gameCoordinator)
-			}.buttonStyle(ActionButton())
-		} else {
-			Button(action.contextualName){}.buttonStyle(ActionButtonInactive())
-		}
-		Spacer()
-	}
-	
-}
-
