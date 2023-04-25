@@ -21,7 +21,6 @@ extension CombatScene: combatAnimations {
         objectNode.position = CGPoint(x: frame.midX, y: frame.midY)
 
         // Definir os pontos inicial e final da animação
-        let startPoint = objectNode.position
         let endPoint = CGPoint(x: frame.maxX, y: frame.minY)
 
         // Criar a ação de mover o objeto
