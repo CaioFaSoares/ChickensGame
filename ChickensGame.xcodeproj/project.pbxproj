@@ -34,6 +34,7 @@
 		D6CEBE4F29E44F640071D2B1 /* TypesOfAttack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CEBE4E29E44F640071D2B1 /* TypesOfAttack.swift */; };
 		FCD1FB1529DC49F2007AF089 /* PrintOnlyInDebug.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD1FB1429DC49F2007AF089 /* PrintOnlyInDebug.swift */; };
 		FCD1FB1829DDAE3E007AF089 /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD1FB1729DDAE3E007AF089 /* ActionButton.swift */; };
+		FCD1FB2529E6F0A4007AF089 /* CombatAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD1FB2429E6F0A4007AF089 /* CombatAnimations.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		D6CEBE4E29E44F640071D2B1 /* TypesOfAttack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypesOfAttack.swift; sourceTree = "<group>"; };
 		FCD1FB1429DC49F2007AF089 /* PrintOnlyInDebug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintOnlyInDebug.swift; sourceTree = "<group>"; };
 		FCD1FB1729DDAE3E007AF089 /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
+		FCD1FB2429E6F0A4007AF089 /* CombatAnimations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombatAnimations.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 			children = (
 				D6C23B5729D3312F00EEB16D /* CombatView.swift */,
 				D659AFEE29DC6C140094702E /* CombatScene.swift */,
+				FCD1FB2429E6F0A4007AF089 /* CombatAnimations.swift */,
 			);
 			path = Combat;
 			sourceTree = "<group>";
@@ -390,6 +393,7 @@
 				D6C23B8429D3338E00EEB16D /* EnemyActionsGenerator.swift in Sources */,
 				D6C23B5829D3312F00EEB16D /* CombatView.swift in Sources */,
 				D622DCD729DB6E3A00233269 /* Sleep.swift in Sources */,
+				FCD1FB2529E6F0A4007AF089 /* CombatAnimations.swift in Sources */,
 				D6C23B8729D3338E00EEB16D /* ActionProtocol.swift in Sources */,
 				FCD1FB1829DDAE3E007AF089 /* ActionButton.swift in Sources */,
 				D6BE222E29D708410012FF38 /* CombatManager.swift in Sources */,

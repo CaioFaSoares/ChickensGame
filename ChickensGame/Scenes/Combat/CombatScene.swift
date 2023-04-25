@@ -15,15 +15,15 @@ class CombatScene: SKScene, ObservableObject {
 	let playerXSP = UIScreen.main.bounds.width / 4
 	let playerYSP = UIScreen.main.bounds.width / 4
 
-    let enemyXSP = UIScreen.main.bounds.width / 1.5
-    let enemyYSP = UIScreen.main.bounds.width / 3
+    let enemyXSP = UIScreen.main.bounds.width / 1.3
+    let enemyYSP = UIScreen.main.bounds.width / 4
 	
 	override func didMove(to view: SKView) {
 		physicsBody = SKPhysicsBody(edgeLoopFrom: frame)
 
 	}
 
-    func createAnimation(texturePrefix: String, frameCount: Int, timePerFrame: TimeInterval) -> SKAction {
+        func createAnimation(texturePrefix: String, frameCount: Int, timePerFrame: TimeInterval) -> SKAction {
         var frames: [SKTexture] = []
         for i in 1..<frameCount {
             let textureName = "\(texturePrefix)\(i)"
@@ -41,16 +41,24 @@ class CombatScene: SKScene, ObservableObject {
 								  y: playerYSP)
 		player.name = "player"
 
-        let animation = createAnimation(texturePrefix: "Galinhaframe", frameCount: 5, timePerFrame: 0.3)
+        let animation = createAnimation(texturePrefix: "GalinhaFrame", frameCount: 5, timePerFrame: 0.3)
 
         player.run(SKAction.repeatForever(animation))
+
+        let test = basicAttackAnimation(imageName: "Attack-Button-Sprite")
+        let test2 = cornHealingAnimation(imageName: "Corn-Sprite")
+        let test3 = strongAttackAnimation(imageName: "Strong-Button-Sprite")
+
+        addChild(test)
+        addChild(test2)
+        addChild(test3)
 
 		addChild(player)
 	}
 	
 	func spawnEnemyEntitySpriteWithTexture() {
 		let enemy = SKSpriteNode(imageNamed: "Enemy")
-		enemy.scale(to: CGSize(width: 350, height: 350))
+        enemy.scale(to:defaultScale)
 		enemy.position = CGPoint(x: enemyXSP,
 								 y: enemyYSP)
 		enemy.name = "enemy"
@@ -78,3 +86,5 @@ class CombatScene: SKScene, ObservableObject {
 	}
 	
 }
+
+
