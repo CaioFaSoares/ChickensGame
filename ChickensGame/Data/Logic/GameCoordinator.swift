@@ -28,6 +28,8 @@ class GameCoordinator: ObservableObject {
 	@Published var newestLog = ""
 	
 	@Published var currentCombatView: GameCoordinator?
+    
+    @Published var blurVal: CGFloat = 0
 	
 	var anyCancellable: AnyCancellable? = nil
     
@@ -127,11 +129,13 @@ extension GameCoordinator: TurnLogic {
     
     func endCombatPlayerWon() {
         gameState = .combatHasBeenWon
+        blurVal = 5
         if selectableUpgrades.isEmpty { generateUpgradePaths() }
     }
     
     func endCombatPlayerLost() {
         gameState = .combatHasBeenLost
+        blurVal = 5
     }
     
 }
@@ -185,6 +189,7 @@ extension GameCoordinator: CombatCycleLogic {
         self.combatManager.currentTurn = 0
         self.combatManager.isEnemyTurn = false
         self.gameState = .combatIsOngoing
+        blurVal = 0
         nextCombatCyclePrepScreenIsShowing = true
     }
     

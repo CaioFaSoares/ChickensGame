@@ -37,6 +37,7 @@ struct CombatView: View {
                 }
                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 4)
             }.navigationBarBackButtonHidden(true)
+                .blur(radius: gameCoordinator.blurVal)
             
             switch gameCoordinator.gameState {
             case .combatIsOngoing:
@@ -59,6 +60,17 @@ struct DeadView: View {
             Color(.black)
                 .opacity(0.75)
                 .ignoresSafeArea()
+            Image("selection-screen")
+            Color.gray.blendMode(.color)
+            VStack{
+                Text("You've died!!")
+                    .font(.title)
+                    .foregroundColor(.white)
+                    .padding(.all)
+                Button("Restart game!") {
+                    
+                }
+            }
         }
     }
 }
@@ -69,18 +81,21 @@ struct UpgradeView: View {
     
     var body: some View {
         ZStack {
-            Color(.blue)
-                .opacity(0.75)
-                .ignoresSafeArea()
-            VStack{
-                Text("You've won!")
-                    .font(.title)
-                    .padding(.all)
-                Group {
-                    ForEach(gameCoordinator.selectableUpgrades, id: \.self) { action in
-                        Button(action.contextualName) { processButtonPress(action: action, caster: gameCoordinator.player, target: nil, gMan: gameCoordinator) }
-                            .padding(.all)
-                            .buttonStyle(.bordered)
+            ZStack {
+                Color(.black)
+                    .opacity(0.75)
+                    .ignoresSafeArea()
+                Image("selection-screen")
+                VStack{
+                    Text("You've won!")
+                        .font(.title)
+                        .padding(.all)
+                    Group {
+                        ForEach(gameCoordinator.selectableUpgrades, id: \.self) { action in
+                            Button(action.contextualName) { processButtonPress(action: action, caster: gameCoordinator.player, target: nil, gMan: gameCoordinator) }
+                                .padding(.all)
+                                .buttonStyle(.bordered)
+                        }
                     }
                 }
             }
