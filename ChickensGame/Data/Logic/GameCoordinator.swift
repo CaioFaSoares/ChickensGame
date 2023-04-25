@@ -14,11 +14,16 @@ class GameCoordinator: ObservableObject {
     //Entities initialization
     @Published var player: Player
     @Published var enemy: Enemy
+    var enemyBaseStats: (Int, Int) = (8,0)
 	
+    //Turn manager and stuff
 	@Published var combatManager = CombatManager()
+    @Published var combatLevel: Int = 1
 	
+    //Turn manager and stuff
 	@Published var gameState: GameState = .combatIsOngoing
 	@Published var selectableUpgrades: [EnviromentalAction] = []
+    @Published var nextCombatCyclePrepScreenIsShowing: Bool = false
 	
 	@Published var newestLog = ""
 	
@@ -27,11 +32,11 @@ class GameCoordinator: ObservableObject {
 	var anyCancellable: AnyCancellable? = nil
     
 	init(view: CombatView? = nil) {
-        self.player = Player(100,0)
-        self.enemy = Enemy(100,0)
+        self.player = Player(12,2)
+        self.enemy = Enemy(enemyBaseStats.0,enemyBaseStats.1)
 		
 		let atk1 = PlayerAttackGenerator().generateBasicAttack()
-		let atk2 = PlayerAttackGenerator().generateGodAttack()
+		let atk2 = PlayerAttackGenerator().generateDebugAttack()
         let atk3 = PlayerAttackGenerator().generateSkillHealing()
 		
 		self.player.activeActions.append(atk1)
@@ -51,22 +56,14 @@ class GameCoordinator: ObservableObject {
     }
 }
 
-extension GameCoordinator {
-	
-	func endTurn() {
-		
-		combatManager.incrementTurnCounterAndToggleEnemyState()
-		
-		if !player.isAlive {
-			endCombatPlayerLost()
-		} else if !enemy.isAlive {
-			endCombatPlayerWon()
-		}
-		
-		checkIfItsEnemyTurn()
-		runCooldownDecrementorOnAllEnemyActiveActions()
-		
-	}
+// COOLDOWN LOGIC
+
+protocol CooldownLogic {
+    func runCooldownDecrementorOnAllPlayerActiveActions()
+    func runCooldownDecrementorOnAllEnemyActiveActions()
+}
+
+extension GameCoordinator: CooldownLogic {
 	
 	func runCooldownDecrementorOnAllPlayerActiveActions() {
 		for act in player.activeActions where !act.isOffCooldown {
@@ -82,34 +79,113 @@ extension GameCoordinator {
 		}
 	}
 	
-	func endCombatPlayerWon() {
-		gameState = .combatHasBeenWon
-		if selectableUpgrades.isEmpty { generateUpgradePaths() }
-	}
-	
-	func generateUpgradePaths() {
-		let upg1 = EnviromentalActionGenerator().generateFullHeal()
-		let upg2 = EnviromentalActionGenerator().generateUpgradeToBasicAttack()
-		
-		selectableUpgrades.append(upg1)
-		selectableUpgrades.append(upg2)
-	}
-	
-	func endCombatPlayerLost() {
-		gameState = .combatHasBeenLost
-	}
-	
-	func checkIfItsEnemyTurn() {
-		if combatManager.isEnemyTurn {
-			initEnemyTurn()
-		}
-	}
-	
-	func initEnemyTurn() {
-		let validActions = enemy.activeActions.filter { $0.isOffCooldown }
-		let rolledForAction = combatManager.enemyTurnDiceRoller(validActions)
-		casterEntityActingUponTargetEntity(action: rolledForAction, caster: enemy, target: player, gMan: self)
-		runCooldownDecrementorOnAllPlayerActiveActions()
-	}
-	
+}
+
+// TURN LOGIC
+
+protocol TurnLogic {
+    func checkIfItsEnemyTurn()
+    func initEnemyTurn()
+    func endTurn()
+    func endCombatPlayerWon()
+    func endCombatPlayerLost()
+}
+
+extension GameCoordinator: TurnLogic {
+    
+    func checkIfItsEnemyTurn() {
+        if combatManager.isEnemyTurn {
+            initEnemyTurn()
+        }
+    }
+    
+    func initEnemyTurn() {
+        let validActions = enemy.activeActions.filter { $0.isOffCooldown }
+        let rolledForAction = combatManager.enemyTurnDiceRoller(validActions)
+        casterEntityActingUponTargetEntity(action: rolledForAction, caster: enemy, target: player, gMan: self)
+        runCooldownDecrementorOnAllPlayerActiveActions()
+    }
+    
+    func endTurn() {
+        
+        combatManager.incrementTurnCounterAndToggleEnemyState()
+        
+        if !player.isAlive {
+            endCombatPlayerLost()
+        } else if !enemy.isAlive {
+            runCooldownDecrementorOnAllPlayerActiveActions()
+            endCombatPlayerWon()
+        }
+        
+        if enemy.isAlive {
+            checkIfItsEnemyTurn()
+        }
+        
+        runCooldownDecrementorOnAllEnemyActiveActions()
+        
+    }
+    
+    func endCombatPlayerWon() {
+        gameState = .combatHasBeenWon
+        if selectableUpgrades.isEmpty { generateUpgradePaths() }
+    }
+    
+    func endCombatPlayerLost() {
+        gameState = .combatHasBeenLost
+    }
+    
+}
+
+// UPGRADES
+
+protocol UpgradesLogic {
+    func generateUpgradePaths()
+    func upgradeWasChosen()
+}
+
+extension GameCoordinator: UpgradesLogic {
+    
+    func generateUpgradePaths() {
+        let upg1 = EnviromentalActionGenerator().generateFullHeal()
+        let upg2 = EnviromentalActionGenerator().generateUpgradeToBasicAttack()
+        
+        selectableUpgrades.append(upg1)
+        selectableUpgrades.append(upg2)
+    }
+    
+    func upgradeWasChosen() {
+        selectableUpgrades = []
+        initNextCombatCycle()
+    }
+    
+}
+
+// COMBAT CYCLE LOGIC
+
+protocol CombatCycleLogic {
+    func initNextCombatCycle()
+}
+
+extension GameCoordinator: CombatCycleLogic {
+    
+    func initNextCombatCycle() {
+        self.player.updateMaxHP(deltaMaxHP: 1)
+        self.enemyBaseStats.0 += 2
+        self.enemyBaseStats.1 += 1
+        
+        self.enemy = Enemy(enemyBaseStats.0,enemyBaseStats.1)
+        
+        let eAtk1 = EnemyAttackGenerator().generateBasicAttack()
+        let eAtk2 = EnemyAttackGenerator().generateStrongAttack()
+        
+        self.enemy.activeActions.append(eAtk1)
+        self.enemy.activeActions.append(eAtk2)
+        
+        self.combatLevel += 1
+        self.combatManager.currentTurn = 0
+        self.combatManager.isEnemyTurn = false
+        self.gameState = .combatIsOngoing
+        nextCombatCyclePrepScreenIsShowing = true
+    }
+    
 }

@@ -22,82 +22,69 @@ struct CombatView: View {
     @ObservedObject var gameCoordinator: GameCoordinator
     
 	var body: some View {
-        VStack{
-			switch gameCoordinator.gameState {
-			case .combatIsOngoing:
-				ZStack {
-					CombatStatTracker(gameCoordinator: gameCoordinator)
-				}
-				.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 4)
-				ZStack {
-					CombatSceneView(gameCoordinator: gameCoordinator, gameScene: gameScene)
-				}
-				.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 2)
-				ZStack{
-					CombatActionView(gameCoordinator: gameCoordinator)
-				}
-				.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 4)
-			case .combatHasBeenLost:
-				ZStack {
-					VStack {
-						ZStack {
-							CombatStatTracker(gameCoordinator: gameCoordinator)
-						}
-						.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 4)
-						ZStack {
-							CombatSceneView(gameCoordinator: gameCoordinator, gameScene: gameScene)
-						}
-						.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 2)
-						ZStack{
-							CombatActionView(gameCoordinator: gameCoordinator)
-						}
-						.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 4)
-					}
-					ZStack {
-						Color(.black)
-							.opacity(0.75)
-							.ignoresSafeArea()
-					}
-				}
-			case .combatHasBeenWon:
-				ZStack {
-					VStack {
-						ZStack {
-							CombatStatTracker(gameCoordinator: gameCoordinator)
-						}
-						.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 4)
-						ZStack {
-							CombatSceneView(gameCoordinator: gameCoordinator, gameScene: gameScene)
-						}
-						.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 2)
-						ZStack{
-							CombatActionView(gameCoordinator: gameCoordinator)
-						}
-						.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 4)
-					}
-					ZStack {
-						Color(.blue)
-							.opacity(0.75)
-							.ignoresSafeArea()
-						VStack{
-							Text("You've won!")
-								.font(.title)
-								.padding(.all)
-							Group {
-								ForEach(gameCoordinator.selectableUpgrades, id: \.self) { action in
-									Button(action.contextualName) {
-										processButtonPress(action: action, caster: gameCoordinator.player, target: nil, gMan: gameCoordinator)
-									}	.padding(.all)
-										.buttonStyle(.bordered)
-								}
-							}
-						}
-					}
-					
-				}
-			}
+        ZStack {
+            VStack{
+                ZStack {
+                    CombatStatTracker(gameCoordinator: gameCoordinator)
+                }
+                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 4)
+                ZStack {
+                    CombatSceneView(gameCoordinator: gameCoordinator, gameScene: gameScene)
+                }
+                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 2)
+                ZStack{
+                    CombatActionView(gameCoordinator: gameCoordinator)
+                }
+                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 4)
+            }.navigationBarBackButtonHidden(true)
+            
+            switch gameCoordinator.gameState {
+            case .combatIsOngoing:
+                EmptyView()
+            case .combatHasBeenLost:
+                DeadView(gameCoordinator: gameCoordinator)
+            case .combatHasBeenWon:
+                UpgradeView(gameCoordinator: gameCoordinator)
+            }
         }
-		.navigationBarBackButtonHidden(true)
+    }
+}
+
+struct DeadView: View {
+    
+    @ObservedObject var gameCoordinator: GameCoordinator
+    
+    var body: some View {
+        ZStack {
+            Color(.black)
+                .opacity(0.75)
+                .ignoresSafeArea()
+        }
+    }
+}
+
+struct UpgradeView: View {
+    
+    @ObservedObject var gameCoordinator: GameCoordinator
+    
+    var body: some View {
+        ZStack {
+            Color(.blue)
+                .opacity(0.75)
+                .ignoresSafeArea()
+            VStack{
+                Text("You've won!")
+                    .font(.title)
+                    .padding(.all)
+                Group {
+                    ForEach(gameCoordinator.selectableUpgrades, id: \.self) { action in
+                        Button(action.contextualName) { processButtonPress(action: action, caster: gameCoordinator.player, target: nil, gMan: gameCoordinator) }
+                            .padding(.all)
+                            .buttonStyle(.bordered)
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -109,7 +96,10 @@ struct CombatStatTracker: View {
 		Spacer()
 		VStack{
 			Spacer()
-			Text("\(gameCoordinator.combatManager.currentTurn)")
+            HStack{
+                Text("\(gameCoordinator.combatManager.currentTurn)")
+                Text("\(gameCoordinator.combatLevel)")
+            }
 			Spacer()
 			HStack {
 				Spacer()
@@ -134,7 +124,6 @@ struct CombatSceneView: View {
 			.ignoresSafeArea()
 		VStack {
 			Text("\(gameCoordinator.newestLog)")
-				.padding(.top)
 			Spacer()
 		}
 	}

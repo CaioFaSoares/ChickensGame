@@ -28,7 +28,7 @@ class PlayerAttackGenerator {
                             contextualName: "Healing \nCorn", typeOfAction: .entity_targetingItself)
     }
 	
-	func generateGodAttack() -> EntityAction {
+	func generateDebugAttack() -> EntityAction {
 		return EntityAction(isHealing: false,
 							value: 999, cooldown: 0, accuracy: 1,
 							internalID: 9999, internalName: "godslap",

@@ -13,21 +13,25 @@ func processButtonPress(
 	target  targetEntity: (any Entity)?,
 	gMan	gameCoordinator: GameCoordinator
 ) -> Void {
-	guard let isInputActionEntityAction = inputAction as? EntityAction else { return }
-	guard let validatedEnemy = targetEntity else { return }
-	
-	if !isInputActionEntityAction.isOffCooldown {
-		print("you shouldn't be able to cast \(isInputActionEntityAction.internalName). \(casterEntity.currentHP) \(validatedEnemy.currentHP)")
-	}
-	
-	
 	gameCoordinator.newestLog = ""
 	
 	switch inputAction.typeOfAction {
 		case .entity_targetingAnotherEntity:
+            guard let isInputActionEntityAction = inputAction as? EntityAction else { return }
+            guard let validatedEnemy = targetEntity else { return }
+            
+            if !isInputActionEntityAction.isOffCooldown {
+                print("you shouldn't be able to cast \(isInputActionEntityAction.internalName). \(casterEntity.currentHP) \(validatedEnemy.currentHP)")
+            }
 			casterEntityActingUponTargetEntity(action: inputAction as! EntityAction,
 											   caster: casterEntity, target: validatedEnemy, gMan: gameCoordinator)
 		case .entity_targetingItself:
+            guard let isInputActionEntityAction = inputAction as? EntityAction else { return }
+            guard let validatedEnemy = targetEntity else { return }
+            
+            if !isInputActionEntityAction.isOffCooldown {
+                print("you shouldn't be able to cast \(isInputActionEntityAction.internalName). \(casterEntity.currentHP) \(validatedEnemy.currentHP)")
+            }
 			entityActingUponItself(action: inputAction as! EntityAction,
 								   caster: casterEntity, gMan: gameCoordinator)
 		case .enviromental_targetingPlayerStat:

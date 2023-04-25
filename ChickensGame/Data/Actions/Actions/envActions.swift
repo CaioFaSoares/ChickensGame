@@ -11,9 +11,15 @@ func enviromentalActionUponPlayer(
 	action  inputAction: EnviromentalAction,
 	player  playerEntity: Player,
 	gMan 	gameCoordinator: GameCoordinator
-) -> Any {
+) -> Void {
 	
-	return " "
+    switch inputAction.targetStat {
+    case "currentHP":
+        playerEntity.updateCurrentHP(deltaHP: inputAction.value, isHealing: true)
+    default:
+        print("")
+    }
+    gameCoordinator.upgradeWasChosen()
 	
 }
 
@@ -21,9 +27,15 @@ func enviromentalActionUponPlayerAction(
 	action  inputAction: EnviromentalAction,
 	player  playerEntity: Player,
 	gMan 	gameCoordinator: GameCoordinator
-) -> Any {
+) -> Void {
 	
-	return " "
+	// find action with that name
+    for action in playerEntity.activeActions where action.internalName == inputAction.targetAction {
+        print("\(action.contextualName) -> \(action.value)")
+        action.value += inputAction.value
+        print("\(action.contextualName) -> \(action.value)")
+    }
+    gameCoordinator.upgradeWasChosen()
 	
 }
 
