@@ -32,6 +32,9 @@
 		D6C23B8B29D34F1600EEB16D /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D6C23B8A29D34F1600EEB16D /* .gitignore */; };
 		D6C23B8D29D3501A00EEB16D /* .gitattributes in Resources */ = {isa = PBXBuildFile; fileRef = D6C23B8C29D3501A00EEB16D /* .gitattributes */; };
 		D6CEBE4F29E44F640071D2B1 /* TypesOfAttack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CEBE4E29E44F640071D2B1 /* TypesOfAttack.swift */; };
+		FC5222E629F814BA009E0BAC /* PPMondwest-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC5222E529F814BA009E0BAC /* PPMondwest-Bold.ttf */; };
+		FC5222E729F81758009E0BAC /* PPMondwest-Bold.ttf in Sources */ = {isa = PBXBuildFile; fileRef = FC5222E529F814BA009E0BAC /* PPMondwest-Bold.ttf */; };
+		FC5222EA29F94EDC009E0BAC /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5222E929F94EDC009E0BAC /* OnBoardingView.swift */; };
 		FCD1FB1529DC49F2007AF089 /* PrintOnlyInDebug.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD1FB1429DC49F2007AF089 /* PrintOnlyInDebug.swift */; };
 		FCD1FB1829DDAE3E007AF089 /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD1FB1729DDAE3E007AF089 /* ActionButton.swift */; };
 		FCD1FB2529E6F0A4007AF089 /* CombatAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD1FB2429E6F0A4007AF089 /* CombatAnimations.swift */; };
@@ -83,6 +86,9 @@
 		D6C23B8A29D34F1600EEB16D /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		D6C23B8C29D3501A00EEB16D /* .gitattributes */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitattributes; sourceTree = "<group>"; };
 		D6CEBE4E29E44F640071D2B1 /* TypesOfAttack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypesOfAttack.swift; sourceTree = "<group>"; };
+		FC5222E329F8137C009E0BAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		FC5222E529F814BA009E0BAC /* PPMondwest-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PPMondwest-Bold.ttf"; sourceTree = "<group>"; };
+		FC5222E929F94EDC009E0BAC /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
 		FCD1FB1429DC49F2007AF089 /* PrintOnlyInDebug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintOnlyInDebug.swift; sourceTree = "<group>"; };
 		FCD1FB1729DDAE3E007AF089 /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		FCD1FB2429E6F0A4007AF089 /* CombatAnimations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombatAnimations.swift; sourceTree = "<group>"; };
@@ -194,6 +200,9 @@
 		D6C23B5429D3312F00EEB16D /* ChickensGame */ = {
 			isa = PBXGroup;
 			children = (
+				FC5222E829F94EB9009E0BAC /* onBoarding */,
+				FC5222E429F8148B009E0BAC /* Fonts */,
+				FC5222E329F8137C009E0BAC /* Info.plist */,
 				FCD1FB1629DC49F8007AF089 /* Utility */,
 				D659AFEC29DC6BF30094702E /* Scenes */,
 				D6BE222729D6FD430012FF38 /* Data */,
@@ -243,6 +252,22 @@
 				D6C23B8229D3338E00EEB16D /* runAction.swift */,
 			);
 			path = Actions;
+			sourceTree = "<group>";
+		};
+		FC5222E429F8148B009E0BAC /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				FC5222E529F814BA009E0BAC /* PPMondwest-Bold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		FC5222E829F94EB9009E0BAC /* onBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				FC5222E929F94EDC009E0BAC /* OnBoardingView.swift */,
+			);
+			path = onBoarding;
 			sourceTree = "<group>";
 		};
 		FCD1FB1629DC49F8007AF089 /* Utility */ = {
@@ -358,6 +383,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC5222E629F814BA009E0BAC /* PPMondwest-Bold.ttf in Resources */,
 				D6C23B5D29D3313000EEB16D /* Preview Assets.xcassets in Resources */,
 				D6C23B8B29D34F1600EEB16D /* .gitignore in Resources */,
 				D6C23B5A29D3313000EEB16D /* Assets.xcassets in Resources */,
@@ -386,6 +412,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC5222E729F81758009E0BAC /* PPMondwest-Bold.ttf in Sources */,
 				D6CEBE4F29E44F640071D2B1 /* TypesOfAttack.swift in Sources */,
 				D6C23B8529D3338E00EEB16D /* PlayerActionsGenerator.swift in Sources */,
 				D6BE222029D5B4A80012FF38 /* EnemyEntity.swift in Sources */,
@@ -393,6 +420,7 @@
 				D6C23B8429D3338E00EEB16D /* EnemyActionsGenerator.swift in Sources */,
 				D6C23B5829D3312F00EEB16D /* CombatView.swift in Sources */,
 				D622DCD729DB6E3A00233269 /* Sleep.swift in Sources */,
+				FC5222EA29F94EDC009E0BAC /* OnBoardingView.swift in Sources */,
 				FCD1FB2529E6F0A4007AF089 /* CombatAnimations.swift in Sources */,
 				D6C23B8729D3338E00EEB16D /* ActionProtocol.swift in Sources */,
 				FCD1FB1829DDAE3E007AF089 /* ActionButton.swift in Sources */,
@@ -568,6 +596,7 @@
 				DEVELOPMENT_TEAM = MCC2B4P5MZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ChickensGame/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -597,6 +626,7 @@
 				DEVELOPMENT_TEAM = MCC2B4P5MZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ChickensGame/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
